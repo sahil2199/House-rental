@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String email = txtemail.getText().toString().trim();
+                String email = txtemail.getEditText().getText().toString().trim();
                 String password = lpwd.getEditText().getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
