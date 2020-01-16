@@ -12,13 +12,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    TextInputLayout txtemail,lpwd;
+    TextInputEditText txtemail,lpwd;
     Button btn_login,btn_reg;
 
     private FirebaseAuth mAuth;
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String email = txtemail.getText().toString().trim();
-                String password = lpwd.getEditText().getText().toString().trim();
+                String password = lpwd.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(LoginActivity.this, "Please Enter Email", Toast.LENGTH_SHORT).show();

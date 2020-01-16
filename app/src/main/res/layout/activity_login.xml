@@ -16,7 +16,7 @@
         android:src="@drawable/login"
         android:padding="60dp"
 
-        />
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/loginemail"
@@ -26,7 +26,7 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/colorAccent"
         android:textSize="20sp" />
@@ -40,7 +40,7 @@
         android:ems="10"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textColorHint="@color/colorAccent"
         android:textSize="20sp" />
@@ -52,10 +52,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@drawable/button_rounded"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="#ffffff"
 
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/register"
@@ -64,8 +64,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/button_rounded"
         android:onClick="btn_signup"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="#ffffff"
 
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 </LinearLayout>
