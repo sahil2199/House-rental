@@ -8,15 +8,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 public class SignupActivity extends AppCompatActivity {
-    TextInputLayout fname,lname,txtemail,mnumber,nwpwd,cfmpwd;
+    TextInputEditText fname,lname,txtemail,mnumber,nwpwd,cfmpwd;
     Button btn_reg;
     private FirebaseAuth mAuth;
 
@@ -40,12 +42,12 @@ public class SignupActivity extends AppCompatActivity {
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email=txtemail.getEditText().getText().toString().trim();
-                String password=nwpwd.getEditText().getText().toString().trim();
-                String confirmpassword=cfmpwd.getEditText().getText().toString().trim();
-                String firstname=fname.getEditText().getText().toString().trim();
-                String lastname=lname.getEditText().getText().toString().trim();
-                String mobilenumber=mnumber.getEditText().getText().toString().trim();
+                String email=txtemail.getText().toString().trim();
+                String password=nwpwd.getText().toString().trim();
+                String confirmpassword=cfmpwd.getText().toString().trim();
+                String firstname=fname.getText().toString().trim();
+                String lastname=lname.getText().toString().trim();
+                String mobilenumber=mnumber.getText().toString().trim();
 
 
                 if (TextUtils.isEmpty(email)){
