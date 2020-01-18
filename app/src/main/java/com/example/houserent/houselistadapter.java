@@ -8,7 +8,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class houselistadapter {
-    String image,description,title,area,price;
+   /* String image,description,title,area,price;
     public class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView img;
         TextView area,price,title,desc;
@@ -22,6 +22,6 @@ public class houselistadapter {
             desc=(TextView) view.findViewById(R.id.description);
             cv=(CardView) view.findViewById(R.id.cv);
         }
-    }
+    }*/
 
 }
