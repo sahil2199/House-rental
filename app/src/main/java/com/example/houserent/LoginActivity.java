@@ -17,13 +17,17 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText txtemail,lpwd;
     Button btn_login,btn_reg;
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
+    public FirebaseDatabase fd;
+    DatabaseReference ref;
 
 
     @Override
@@ -54,11 +58,13 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                mAuth.createUserWithEmailAndPassword(email, password)
+                mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+
+
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                                 } else {
                                    Toast.makeText(LoginActivity.this,"Login Failed or User not available",Toast.LENGTH_SHORT).show();
