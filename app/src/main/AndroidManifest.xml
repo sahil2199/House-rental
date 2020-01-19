@@ -13,8 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".houselist"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Upload"></activity>
+        <activity android:name=".houselist" />
+        <activity android:name=".MainActivity" > </activity>
         <activity android:name=".SignupActivity" />
         <activity
             android:name=".SplashScreen"
@@ -27,7 +28,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

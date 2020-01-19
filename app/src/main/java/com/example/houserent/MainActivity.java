@@ -17,11 +17,17 @@ public class MainActivity extends AppCompatActivity {
         btn_rent=findViewById(R.id.rent);
         btn_sell=findViewById(R.id.sell);
         
-        btn_rent.setOnClickListener(new View.OnClickListener() {
+       /* btn_rent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),houselist.class));
+            }*/
+        btn_sell.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Upload.class));
             }
+
         });
     }
 }
