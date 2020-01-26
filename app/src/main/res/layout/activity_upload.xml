@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Upload"
+   >
+
+
+    <ImageView
+        android:id="@+id/upload_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:padding="10dp"
+        app:srcCompat="@color/colorPrimaryDark" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_height="10dp"
+        android:padding="10dp"
+        android:layout_marginTop="250dp"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginRight="40dp"
+        android:hint="Title"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="20dp" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginRight="40dp"
+        android:hint="Description"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="20dp" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_area"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginRight="40dp"
+        android:hint="Area"
+        android:inputType="number"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="20dp" />
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/text_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="40dp"
+        android:hint="Price"
+        android:inputType="number"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button_choose_image"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Choose Image"
+        android:textColor="#ffffff"/>
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="520dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Upload"
+        android:textColor="#ffffff"/>
+
+
+
+</RelativeLayout>

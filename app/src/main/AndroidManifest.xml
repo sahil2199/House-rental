@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Upload"></activity>
-        <activity android:name=".houselist" />
-        <activity android:name=".MainActivity" > </activity>
+        <activity android:name=".Houselist"></activity>
+        <activity android:name=".Upload" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".SignupActivity" />
         <activity
             android:name=".SplashScreen"
