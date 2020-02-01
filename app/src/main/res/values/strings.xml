@@ -6,4 +6,7 @@
     <string name="register">Register</string>
     <string name="todo">TODO</string>
     <string name="properties">PROPERTIES</string>
+    <string name="facebook_app_id">2589782817933881</string>
+    <string name="fb_login_protocol_scheme">fb2589782817933881</string>
+
 </resources>
