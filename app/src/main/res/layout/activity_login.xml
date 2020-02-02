@@ -12,9 +12,9 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="203dp"
+        android:padding="50dp"
         android:src="@drawable/login"
-        android:padding="60dp"
 
         />
 
@@ -69,10 +69,17 @@
 
 
     <com.google.android.gms.common.SignInButton
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
         android:id="@+id/google"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
 
         />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/fb_login_button"
+        android:layout_width="match_parent"
+        android:onClick="facebookLoginButton"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp" />
 </LinearLayout>
