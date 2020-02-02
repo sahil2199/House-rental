@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -155,4 +157,26 @@ public class Upload extends AppCompatActivity {
             Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
     }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.example_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.item1){
+
+            return true;
+        }
+        if(id==R.id.item2){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+            return true;
+        }
+        return true;
+    }
+
 }
