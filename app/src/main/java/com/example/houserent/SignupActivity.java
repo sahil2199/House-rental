@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
 
 
         mAuth=FirebaseAuth.getInstance();
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -33,15 +33,14 @@ public class Houselist extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_houselist);
         mRecyclerView=findViewById(R.id.recycler_view);
         mProgressCircle=findViewById(R.id.progress_cirle);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         mUploadDetails = new ArrayList<>();
-
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("houses");
 
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
@@ -83,6 +82,9 @@ public class Houselist extends AppCompatActivity {
             startActivity(new Intent(this,LoginActivity.class));
             return true;
         }
+        if(id==android.R.id.home)
+            onBackPressed();
         return true;
+
     }
 }

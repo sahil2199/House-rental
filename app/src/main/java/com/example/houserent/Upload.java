@@ -52,7 +52,10 @@ public class Upload extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
-
+        /*getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
         mButtonChooseimage=findViewById(R.id.button_choose_image);
         mImageView=findViewById(R.id.upload_image_view);
         mProgressBar=findViewById(R.id.progress_bar);
@@ -61,7 +64,7 @@ public class Upload extends AppCompatActivity {
         mTextDescription=findViewById(R.id.text_description);
         mTextArea=findViewById(R.id.text_area);
         mTextPrice=findViewById(R.id.text_price);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mStorageReference= FirebaseStorage.getInstance().getReference("houses");
         mDatabaseReference= FirebaseDatabase.getInstance().getReference("houses");
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
@@ -89,6 +92,11 @@ public class Upload extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
     private void openFileChooser(){
         Intent intent=new Intent();
@@ -176,6 +184,8 @@ public class Upload extends AppCompatActivity {
             startActivity(new Intent(this,LoginActivity.class));
             return true;
         }
+        if(id==android.R.id.home)
+        onBackPressed();
         return true;
     }
 
