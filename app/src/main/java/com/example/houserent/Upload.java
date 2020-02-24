@@ -70,25 +70,21 @@ public class Upload extends AppCompatActivity {
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
 
 
-        mButtonUpload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mUploadtask!=null && mUploadtask.isInProgress()){
-                    Toast.makeText(Upload.this, "Upload in Progress...", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                uploadFile();
-                }
+        getSupportActionBar().setTitle("Upload House Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        mButtonUpload.setOnClickListener(v -> {
+            if (mUploadtask!=null && mUploadtask.isInProgress()){
+                Toast.makeText(Upload.this, "Upload in Progress...", Toast.LENGTH_SHORT).show();
+            }
+            else{
+            uploadFile();
             }
         });
 
 
-        mButtonChooseimage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openFileChooser();
-            }
-        });
+        mButtonChooseimage.setOnClickListener(v -> openFileChooser());
     }
 
 
@@ -189,4 +185,15 @@ public class Upload extends AppCompatActivity {
         return true;
     }
 
+    public boolean OnOptionItemSelected(MenuItem item){
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+}
 }

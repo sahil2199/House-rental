@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -42,12 +43,16 @@ public class Houselist extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mUploadDetails = new ArrayList<>();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("houses");
+        getSupportActionBar().setTitle("House List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot postsnapShot : dataSnapshot.getChildren()){
-                    UploadDetails uploadDetails = postsnapShot.getValue(UploadDetails.class);
+
+                for (DataSnapshot postSnapShot : dataSnapshot.getChildren()){
+                    UploadDetails uploadDetails = postSnapShot.getValue(UploadDetails.class);
+                    System.out.println("House details"+uploadDetails);
                     mUploadDetails.add(uploadDetails);
                 }
 

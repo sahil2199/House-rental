@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="130dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:background="#546EF8"
-        android:layout_height="130dp">
+        android:background="#8097FF"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:id="@+id/image_view_upload"
@@ -23,6 +24,8 @@
             android:id="@+id/text_title"
             android:layout_width="257dp"
             android:layout_height="30dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="20dp"
             android:text="TextView" />
