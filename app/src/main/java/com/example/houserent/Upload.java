@@ -143,7 +143,7 @@ public class Upload extends AppCompatActivity {
                                     mTextPrice.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
                             String getuid=FirebaseAuth.getInstance().getUid();
                             mDatabaseReference.child(getuid).setValue(uploadDetails);
-                            startActivity(new Intent(getApplicationContext(),Upload.class));
+                           // startActivity(new Intent(getApplicationContext(),Upload.class));
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

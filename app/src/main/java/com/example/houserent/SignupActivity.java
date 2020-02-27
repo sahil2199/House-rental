@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -17,10 +18,16 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SignupActivity extends AppCompatActivity {
     TextInputEditText fname,lname,txtemail,mnumber,nwpwd,cfmpwd;
     Button btn_reg;
     private FirebaseAuth mAuth;
+    String email,firstname,lastname,password,confirmpassword,mobilenumber;
+    private Object Userprofile;
+    DatabaseReference mfirebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,7 @@ public class SignupActivity extends AppCompatActivity {
         nwpwd=findViewById(R.id.newpwd);
         cfmpwd=findViewById(R.id.confirmpwd);
         btn_reg=findViewById(R.id.registerbutton);
+        mfirebaseDatabase=FirebaseDatabase.getInstance().getReference("Users");
 
 
 
@@ -42,12 +50,12 @@ public class SignupActivity extends AppCompatActivity {
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email=txtemail.getText().toString().trim();
-                String password=nwpwd.getText().toString().trim();
-                String confirmpassword=cfmpwd.getText().toString().trim();
-                String firstname=fname.getText().toString().trim();
-                String lastname=lname.getText().toString().trim();
-                String mobilenumber=mnumber.getText().toString().trim();
+                email=txtemail.getText().toString().trim();
+                password=nwpwd.getText().toString().trim();
+                confirmpassword=cfmpwd.getText().toString().trim();
+                firstname=fname.getText().toString().trim();
+                lastname=lname.getText().toString().trim();
+                mobilenumber=mnumber.getText().toString().trim();
 
 
                 if (TextUtils.isEmpty(email)){
@@ -72,8 +80,9 @@ public class SignupActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                     Toast.makeText(SignupActivity.this,"Registration Successful",Toast.LENGTH_SHORT).show();
+                                        sendUserDate();
+                                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                        Toast.makeText(SignupActivity.this,"Registration Successful",Toast.LENGTH_SHORT).show();
                                     }
                                     else{
                                         Toast.makeText(SignupActivity.this, "Authentication failed", Toast.LENGTH_SHORT).show();
@@ -90,6 +99,14 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
+    }
+    private void sendUserDate()
+    {
+
+      //  DatabaseReference myRef=mfirebaseDatabase.getReference(mAuth.getUid());
+        Userprofile userprofile=new Userprofile(firstname,lastname,email,mobilenumber);
+        String getuid=FirebaseAuth.getInstance().getUid();
+        mfirebaseDatabase.child(getuid).setValue(userprofile);
 
     }
 }
