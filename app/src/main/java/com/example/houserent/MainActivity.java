@@ -44,10 +44,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
         if(id==R.id.item1){
+            //profile
+            startActivity(new Intent(this,Profile.class));
 
             return true;
         }
         if(id==R.id.item2){
+            //signout
             FirebaseAuth.getInstance().signOut();
             finish();
             startActivity(new Intent(this,LoginActivity.class));

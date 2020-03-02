@@ -20,34 +20,37 @@ public class Userprofile {
 
     }
 
-  /*  public String getFname() {
-        return mfname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFname(String fname) {
-        mfname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLname(){
-        return mlname;
-    }
-    public void setLname(String lname){
-        mlname=lname;
+    public String getLastName() {
+        return lastName;
     }
 
-
-    public String getTxtemail(){
-        return mtxtemail;
-    }
-    public void setTxtemail(String txtemail){
-        mtxtemail=txtemail;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getMnumber(){
-        return mmnumber;
+    public String getTxtEmail() {
+        return txtEmail;
     }
-    public void setMnumber(String mnumber){
-        mmnumber=mnumber;
-    }*/
+
+    public void setTxtEmail(String txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
 }
 
