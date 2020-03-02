@@ -43,7 +43,7 @@ public class UploadDetails {
     }
 
 
-    public String getDesccription(){
+    public String getDescription(){
         return mDescription;
     }
     public void setDescription(String description){
