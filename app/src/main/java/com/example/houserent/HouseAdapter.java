@@ -34,7 +34,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         UploadDetails uploadCurrent = mUploadDetailes.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
         holder.textViewPrice.setText(uploadCurrent.getPrice());
-        holder.textViewDescription.setText(uploadCurrent.getDesccription());
+        holder.textViewDescription.setText(uploadCurrent.getDescription());
         holder.textViewArea.setText(uploadCurrent.getArea());
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
     }
