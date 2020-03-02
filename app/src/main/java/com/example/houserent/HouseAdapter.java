@@ -7,12 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.squareup.picasso.Picasso;
 
-import java.net.URI;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -38,13 +34,9 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         UploadDetails uploadCurrent = mUploadDetailes.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
         holder.textViewPrice.setText(uploadCurrent.getPrice());
-        holder.textViewDescription.setText(uploadCurrent.getDescription());
-        //System.out.println(uploadCurrent.getDescription()+"Description");
+        holder.textViewDescription.setText(uploadCurrent.getDesccription());
         holder.textViewArea.setText(uploadCurrent.getArea());
-        //holder.imageView.setImageURI(URI.parse(R.drawable.backgroung_splashscreen));
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
-        Glide.with(mContext).load(uploadCurrent.getmImageUrl()).into(holder.imageView);
-        System.out.println("Image "+uploadCurrent.getmImageUrl());
     }
 
     @Override

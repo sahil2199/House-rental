@@ -120,7 +120,7 @@ public class Upload extends AppCompatActivity {
 
     private void uploadFile(){
         if(mImageUri!=null) {
-            StorageReference fileReference = mStorageReference.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
+            final StorageReference fileReference = mStorageReference.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
 
             mUploadtask = fileReference.putFile(mImageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -133,14 +133,21 @@ public class Upload extends AppCompatActivity {
                                     mProgressBar.setProgress(0);
                                 }
                             },5000);
-                            Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
-                            UploadDetails uploadDetails=new UploadDetails(mTextTitle.getText().toString().trim(),
-                                    mTextDescription.getText().toString().trim(), mTextArea.getText().toString().trim(),
-                                    mTextPrice.getText().toString().trim(),taskSnapshot.getUploadSessionUri().toString());
-                            String getuid=FirebaseAuth.getInstance().getUid();
-                            mDatabaseReference.child(getuid).setValue(uploadDetails);
-                            startActivity(new Intent(getApplicationContext(),Upload.class));
-                        }
+                            fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                                    UploadDetails uploadDetails=new UploadDetails(mTextTitle.getText().toString().trim(),
+                                            mTextDescription.getText().toString().trim(), mTextArea.getText().toString().trim(),
+                                            mTextPrice.getText().toString().trim(),uri.toString());
+
+                                    String getuid=FirebaseAuth.getInstance().getUid();
+                                    mDatabaseReference.child(getuid).setValue(uploadDetails);
+                                    // startActivity(new Intent(getApplicationContext(),Upload.class));
+
+                                }
+                            });
+                            }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -171,6 +178,7 @@ public class Upload extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
         if(id==R.id.item1){
+            startActivity(new Intent(this,Profile.class));
 
             return true;
         }

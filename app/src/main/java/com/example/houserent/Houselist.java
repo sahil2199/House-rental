@@ -78,6 +78,7 @@ public class Houselist extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
         if(id==R.id.item1){
+            startActivity(new Intent(this,Profile.class));
 
             return true;
         }
