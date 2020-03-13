@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".updateprofile"></activity>
-        <activity android:name=".Profile" />
+        <activity android:name=".updateprofile"
+            android:parentActivityName=".Profile"></activity>
+        <activity android:name=".Profile"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity" />
         <activity
             android:name=".Houselist"
