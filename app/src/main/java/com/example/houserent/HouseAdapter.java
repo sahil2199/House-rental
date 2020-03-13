@@ -37,6 +37,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         holder.textViewDescription.setText(uploadCurrent.getDescription());
         holder.textViewArea.setText(uploadCurrent.getArea());
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
+        System.out.println("URL:"+uploadCurrent.getmImageUrl());
     }
 
     @Override
@@ -55,6 +56,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
             textViewDescription=itemView.findViewById(R.id.text_description);
             textViewPrice=itemView.findViewById(R.id.text_price);
             imageView=itemView.findViewById(R.id.image_view_upload);
+
         }
     }
 }

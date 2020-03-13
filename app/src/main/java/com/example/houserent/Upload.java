@@ -136,14 +136,15 @@ public class Upload extends AppCompatActivity {
                             fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
+
                                     UploadDetails uploadDetails=new UploadDetails(mTextTitle.getText().toString().trim(),
                                             mTextDescription.getText().toString().trim(), mTextArea.getText().toString().trim(),
                                             mTextPrice.getText().toString().trim(),uri.toString());
 
                                     String getuid=FirebaseAuth.getInstance().getUid();
                                     mDatabaseReference.child(getuid).setValue(uploadDetails);
-                                    // startActivity(new Intent(getApplicationContext(),Upload.class));
+                                    Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                                 }
                             });
