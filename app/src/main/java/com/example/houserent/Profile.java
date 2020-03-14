@@ -49,7 +49,7 @@ public class Profile extends AppCompatActivity {
                 firstname.setText("FirstName:" + userprofile.getFirstName());
                 lastname.setText("LastName:" + userprofile.getLastName());
                 email.setText("Email:" + userprofile.getTxtEmail());
-                mobileno.setText("Mobile No:" + userprofile.mobileNumber);
+                mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
 
             }
 

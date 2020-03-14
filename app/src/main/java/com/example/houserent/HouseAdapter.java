@@ -1,6 +1,8 @@
 package com.example.houserent;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,10 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHolder>{
     private Context mContext;
@@ -37,7 +42,12 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         holder.textViewDescription.setText(uploadCurrent.getDescription());
         holder.textViewArea.setText(uploadCurrent.getArea());
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
-        System.out.println("URL:"+uploadCurrent.getmImageUrl());
+
+        holder.cardView.setOnClickListener(v -> {//card view onclick listener
+
+
+        });
+
     }
 
     @Override
@@ -48,6 +58,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
     public class HouseViewHolder extends RecyclerView.ViewHolder{
         public TextView textViewTitle,textViewPrice,textViewArea,textViewDescription;
         public ImageView imageView;
+        public CardView cardView;
 
         public HouseViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,7 +67,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
             textViewDescription=itemView.findViewById(R.id.text_description);
             textViewPrice=itemView.findViewById(R.id.text_price);
             imageView=itemView.findViewById(R.id.image_view_upload);
-
+            cardView=itemView.findViewById(R.id.card_view);
         }
     }
 }

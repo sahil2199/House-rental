@@ -15,7 +15,7 @@ public class UploadDetails {
         mTitle=title;
         mArea=area;
         mDescription=description;
-        this.mImageUrl=mImageUrl;
+        mImageUrl=imageUrl;
         mPrice=price;
     }
 
@@ -46,8 +46,8 @@ public class UploadDetails {
     public String getDescription(){
         return mDescription;
     }
-    public void setDescription(String desccription){
-        mDescription=desccription;
+    public void setDescription(String description){
+        mDescription=description;
     }
 
     public String getmImageUrl(){

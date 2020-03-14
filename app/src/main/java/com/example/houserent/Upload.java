@@ -120,7 +120,7 @@ public class Upload extends AppCompatActivity {
 
     private void uploadFile(){
         if(mImageUri!=null) {
-            final StorageReference fileReference = mStorageReference.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
+            StorageReference fileReference = mStorageReference.child(System.currentTimeMillis()+"."+getFileExtension(mImageUri));
 
             mUploadtask = fileReference.putFile(mImageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -148,7 +148,7 @@ public class Upload extends AppCompatActivity {
 
                                 }
                             });
-                            }
+                        }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -179,7 +179,6 @@ public class Upload extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
         if(id==R.id.item1){
-            startActivity(new Intent(this,Profile.class));
 
             return true;
         }
