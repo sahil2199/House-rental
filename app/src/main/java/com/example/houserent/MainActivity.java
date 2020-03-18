@@ -8,31 +8,23 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn_rent,btn_sell;
+    ImageView btn_rent,btn_sell;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn_rent=findViewById(R.id.rent);
-        btn_sell=findViewById(R.id.sell);
+        btn_rent=findViewById(R.id.imageButtonRent);
+        btn_sell=findViewById(R.id.imageButtonSale);
         
-        btn_rent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Houselist.class));
-            }
-        });
-        btn_sell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Upload.class));
-            }
-        });
+        btn_rent.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Houselist.class)));
+        btn_sell.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Upload.class)));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){

@@ -31,6 +31,7 @@ public class SignupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
@@ -44,7 +45,7 @@ public class SignupActivity extends AppCompatActivity {
         mfirebaseDatabase=FirebaseDatabase.getInstance().getReference("Users");
 
 
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mAuth=FirebaseAuth.getInstance();
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btn_reg.setOnClickListener(new View.OnClickListener() {

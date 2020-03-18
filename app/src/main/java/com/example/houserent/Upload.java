@@ -190,15 +190,12 @@ public class Upload extends AppCompatActivity {
         if(id==R.id.item2){
             FirebaseAuth.getInstance().signOut();
             finish();
-            Intent intent =new Intent(this,LoginActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-
+            startActivity(new Intent(this,LoginActivity.class));
             return true;
         }
         if(id==android.R.id.home)
         onBackPressed();
         return true;
     }
+
 }
