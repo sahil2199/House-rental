@@ -6,14 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".Upload"
    >
+    <ScrollView
+        android:id="@+id/scrollView1"
 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
     <ImageView
         android:id="@+id/upload_image_view"
         android:layout_width="match_parent"
         android:layout_height="230dp"
         android:padding="10dp"
-        app:srcCompat="@color/colorPrimaryDark" />
+        app:srcCompat="@drawable/uploedpic" />
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress_bar"
@@ -21,36 +32,36 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_height="10dp"
         android:padding="10dp"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="2dp"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/text_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="280dp"
-        android:layout_marginRight="40dp"
-        android:hint="Title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="Title(BHK)"
         android:textColorHint="@color/colorAccent"
         android:textSize="20dp" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/text_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginRight="40dp"
-        android:hint="Description"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="Address"
         android:textColorHint="@color/colorAccent"
         android:textSize="20dp" />
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/text_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginRight="40dp"
-        android:hint="Area"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="Area(ft2:)"
         android:inputType="number"
         android:textColorHint="@color/colorAccent"
         android:textSize="20dp" />
@@ -58,35 +69,174 @@
         android:id="@+id/text_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
         android:hint="Price"
         android:inputType="number"
         android:textColorHint="@color/colorAccent"
         android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_floor_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Floor No"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_badroom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Badroom"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_bathroom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Bathroom"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_balconies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Balconies"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_furnishing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Furnished(full/half/none)"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_builtup_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Super Builtup Area(ft)"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_carpet_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Carpet Area(ft)"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_bechelors_allow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Bechelors Allow(yes/no)"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_maintainance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:hint="Maintainance"
+                android:inputType="number"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_total_floor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:hint="Total Floor"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_carpark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Car Parking"
+            android:inputType="number"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_faceing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Faceing(E/W/N/S)"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_listed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Listed By(Dealer/Owner)"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/button_choose_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_rounded"
+            android:text="Choose Image"
+            android:textColor="#ffffff" />
+        <Button
+            android:id="@+id/button_upload"
+            android:layout_width="399dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_rounded"
+            android:text="Upload"
+            android:textColor="#ffffff"/>
 
-    <Button
-        android:id="@+id/button_choose_image"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="460dp"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/button_rounded"
-        android:text="Choose Image"
-        android:textColor="#ffffff"/>
-    <Button
-        android:id="@+id/button_upload"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="520dp"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/button_rounded"
-        android:text="Upload"
-        android:textColor="#ffffff"/>
-
-
+    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
