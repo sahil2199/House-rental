@@ -30,13 +30,14 @@
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/text_description"
+            android:id="@+id/text_address"
             android:layout_width="257dp"
             android:layout_height="30dp"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="60dp"
-            android:text="TextView" />
+            android:text="TextView"
+            />
 
         <TextView
             android:id="@+id/text_price"

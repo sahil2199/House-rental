@@ -3,20 +3,47 @@ package com.example.houserent;
 public class UploadDetails {
     private String mTitle;
     private String mImageUrl;
-    private String mDescription;
+    private String mAddress;
     private String mArea;
     private String mPrice;
+    private String mFloorNo;
+    private String mBedroom;
+    private String mBathroom;
+    private String mBalcony;
+    private String mFurnishing;
+    private String mBachelorsAllow;
+    private String mMaitenance;
+    private String mTotalFloor;
+    private String mCarParking;
+    private String mFacing;
+    private String mListed;
+    private String mCity;
+
 
 
     public UploadDetails(){
         //Empty Constructor
     }
-    public UploadDetails(String title,String description,String area,String price,String imageUrl){
+    public UploadDetails(String title,String address,String area,String price,String imageUrl,String floorNo,String bedroom,String bathroom,
+                         String balcony,String furnishing,String bachelorsAllow,String maintenance,String totalFloor,String carParking,
+                         String facing,String listed,String city){
         mTitle=title;
         mArea=area;
-        mDescription=description;
+        mAddress=address;
         mImageUrl=imageUrl;
         mPrice=price;
+        mFloorNo=floorNo;
+        mBedroom=bedroom;
+        mBathroom=bathroom;
+        mBalcony=balcony;
+        mFurnishing=furnishing;
+        mBachelorsAllow=bachelorsAllow;
+        mMaitenance=maintenance;
+        mTotalFloor=totalFloor;
+        mCarParking=carParking;
+        mFacing=facing;
+        mListed=listed;
+        mCity=city;
     }
 
     public String getTitle(){
@@ -43,11 +70,11 @@ public class UploadDetails {
     }
 
 
-    public String getDescription(){
-        return mDescription;
+    public String getAddress(){
+        return mAddress;
     }
-    public void setDescription(String description){
-        mDescription=description;
+    public void setAddress(String address){
+        mAddress=address;
     }
 
     public String getmImageUrl(){
@@ -56,4 +83,91 @@ public class UploadDetails {
     public void setImageUrl(String imageUrl){
         mImageUrl=imageUrl;
     }
+
+
+    public String getFloorNo(){
+        return mFloorNo;
+    }
+    public void setFloorNo(String floorNo){
+        mFloorNo=floorNo;
+    }
+
+    public String getBedroom(){
+        return mBedroom;
+    }
+    public void setBedroom(String bedroom){
+        mBedroom=bedroom;
+    }
+
+    public String getBathroom(){
+        return mBathroom;
+    }
+    public void setBathroom(String bathroom){
+        mBathroom=bathroom;
+    }
+
+    public String getBalcony(){
+        return mBalcony;
+    }
+    public void setBalcony(String balcony){
+        mArea=balcony;
+    }
+
+    public String getFurnishing(){
+        return mFurnishing;
+    }
+    public void setFurnishing(String furnishing){
+        mFurnishing=furnishing;
+    }
+
+    public String getBachelorsAllow(){
+        return mBachelorsAllow;
+    }
+    public void setBachelorsAllow(String bachelorsAllow){
+        mBachelorsAllow=bachelorsAllow;
+    }
+
+    public String getMaitenance(){
+        return mMaitenance;
+    }
+    public void setMaitenance(String maintenance){
+        mMaitenance=maintenance;
+    }
+
+    public String getTotalFloor(){
+        return mTotalFloor;
+    }
+    public void setTotalFloor(String totalFloor){
+        mTotalFloor=totalFloor;
+    }
+
+    public String getCarParking(){
+        return mCarParking;
+    }
+    public void setCarParking(String carParking){
+        mCarParking=carParking;
+    }
+
+    public String getFacing(){
+        return mFacing;
+    }
+    public void setFacing(String facing){
+        mFacing=facing;
+    }
+
+    public String getListed(){
+        return mListed;
+    }
+    public void setListed(String listed){
+        mListed=listed;
+    }
+
+
+    public String getCity(){
+        return mCity;
+    }
+    public void setCity(String city){
+        mCity=city;
+    }
 }
+
