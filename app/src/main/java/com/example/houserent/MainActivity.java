@@ -11,9 +11,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.rpc.Help;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageView btn_rent,btn_sell;
 
     @Override
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btn_rent=findViewById(R.id.imageButtonRent);
         btn_sell=findViewById(R.id.imageButtonSale);
+        navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
         
         btn_rent.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Houselist.class)));
         btn_sell.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Upload.class)));
@@ -58,5 +62,36 @@ public class MainActivity extends AppCompatActivity {
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
     }
+    @Override
+    public boolean onNavigationItemSelected(MenuItem menuItem) {
+        if (menuItem.getItemId() == R.id.nav_home) {
 
+            startActivity(new Intent(MainActivity.this,MainActivity.class));
+        }
+        if (menuItem.getItemId() == R.id.nav_edu) {
+            startActivity(new Intent(MainActivity.this,UploadDetails.class));
+        }
+        if (menuItem.getItemId() == R.id.nav_per) {
+            startActivity(new Intent(MainActivity.this,Profile.class));
+            this.finish();
+        }
+        if (menuItem.getItemId() == R.id.nav_exp) {
+            startActivity(new Intent(MainActivity.this,Houselist.class));
+            this.finish();
+        }
+        if (menuItem.getItemId() == R.id.nav_skill) {
+            startActivity(new Intent(MainActivity.this,AboutUs.class));
+        }
+        if (menuItem.getItemId() == R.id.nav_resume) {
+            startActivity(new Intent(MainActivity.this, Help.class));
+        }
+
+        if(menuItem.getItemId()== R.id.nav_logout) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(MainActivity.this, MainActivity.class));
+        }
+
+        //drawerLayout.closeDrawers();
+        return true;
+    }
 }
