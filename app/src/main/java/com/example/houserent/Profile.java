@@ -22,7 +22,7 @@ public class Profile extends AppCompatActivity {
 
     private TextView firstname,lastname,email,mobileno;
     private TextInputEditText address;
-    private Button edit;
+    private Button edit,temp;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
 
@@ -37,6 +37,10 @@ public class Profile extends AppCompatActivity {
         mobileno=findViewById(R.id.mnum);
 
         edit=findViewById(R.id.editbtn);
+
+        temp=findViewById(R.id.temp);
+
+
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -58,7 +62,15 @@ public class Profile extends AppCompatActivity {
                 Toast.makeText(Profile.this,databaseError.getCode(),Toast.LENGTH_SHORT).show();
             }
         });
+
         edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Profile.this,updateprofile.class));
+            }
+        });
+
+        temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Profile.this,Datailpage.class));

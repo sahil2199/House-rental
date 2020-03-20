@@ -1,6 +1,7 @@
 package com.example.houserent;
 
-import androidx.annotation.NonNull;
+import
+        androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -44,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText txtemail,lpwd;
     Button btn_login,btn_reg;
     SignInButton btn_google;
-    LoginButton btn_facebook;
+    //LoginButton btn_facebook;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     public FirebaseDatabase fd;
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_login=findViewById(R.id.login);
         btn_reg=findViewById(R.id.register);
         mAuth=FirebaseAuth.getInstance();
-        btn_facebook=(LoginButton) findViewById(R.id.fb_login_button);
+  //      btn_facebook=(LoginButton) findViewById(R.id.fb_login_button);
 
        //Google sign in
 
@@ -94,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+/*
 
         //Facebook Login
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -103,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
+*/
 
 
 
@@ -200,7 +201,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void facebookLoginButton(View v)
+ /*   public void facebookLoginButton(View v)
     {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -236,7 +237,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-    }
+    }*/
 
     @Override
     public void onBackPressed() {
@@ -248,8 +249,8 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(a);
     }
 
-    private void updateUI(FirebaseUser mFirebaseUser) {
+    /*private void updateUI(FirebaseUser mFirebaseUser) {
         Toast.makeText(this, mFirebaseUser.getEmail(), Toast.LENGTH_LONG).show();
-    }
+    }*/
 
 }

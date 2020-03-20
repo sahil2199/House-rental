@@ -39,7 +39,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         UploadDetails uploadCurrent = mUploadDetailes.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
         holder.textViewPrice.setText(uploadCurrent.getPrice());
-        holder.textViewDescription.setText(uploadCurrent.getDescription());
+        holder.textViewAddress.setText(uploadCurrent.getAddress());
         holder.textViewArea.setText(uploadCurrent.getArea());
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
 
@@ -56,7 +56,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
     }
 
     public class HouseViewHolder extends RecyclerView.ViewHolder{
-        public TextView textViewTitle,textViewPrice,textViewArea,textViewDescription;
+        public TextView textViewTitle,textViewPrice,textViewArea,textViewAddress;
         public ImageView imageView;
         public CardView cardView;
 
@@ -64,7 +64,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
             super(itemView);
             textViewTitle=itemView.findViewById(R.id.text_title);
             textViewArea=itemView.findViewById(R.id.text_area);
-            textViewDescription=itemView.findViewById(R.id.text_description);
+            textViewAddress=itemView.findViewById(R.id.text_address);
             textViewPrice=itemView.findViewById(R.id.text_price);
             imageView=itemView.findViewById(R.id.image_view_upload);
             cardView=itemView.findViewById(R.id.card_view);

@@ -39,7 +39,9 @@ public class Upload extends AppCompatActivity {
     private Button mButtonChooseimage,mButtonUpload;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
-    private TextInputEditText mTextTitle,mTextPrice,mTextArea,mTextDescription;
+    private TextInputEditText mTextTitle,mTextPrice,mTextArea,mTextAddress,mTextFloorNo,mTextBedroom,mTextBathroom,mTextBalcony,mTextFurnishing;
+    private TextInputEditText mTextMaintenance,mTextTotalFloor,mTextCarParking,mTextFacing,mTextListed,mTextCity,mTextBachelorsAllow;
+
 
     private Uri mImageUri;
 
@@ -61,9 +63,27 @@ public class Upload extends AppCompatActivity {
         mProgressBar=findViewById(R.id.progress_bar);
         mButtonUpload=findViewById(R.id.button_upload);
         mTextTitle=findViewById(R.id.text_title);
-        mTextDescription=findViewById(R.id.text_description);
+        mTextAddress=findViewById(R.id.text_address);
         mTextArea=findViewById(R.id.text_area);
         mTextPrice=findViewById(R.id.text_price);
+        mTextFloorNo=findViewById(R.id.text_floor_no);
+        mTextBedroom=findViewById(R.id.text_bedroom);
+        mTextBathroom=findViewById(R.id.text_bathroom);
+        mTextBalcony=findViewById(R.id.text_balcony);
+        mTextFurnishing=findViewById(R.id.text_furnishing);
+        mTextBachelorsAllow=findViewById(R.id.text_bachelors_allow);
+        mTextMaintenance=findViewById(R.id.text_maintenance);
+        mTextTotalFloor=findViewById(R.id.text_total_floor);
+        mTextCarParking=findViewById(R.id.text_car_parking);
+        mTextFacing=findViewById(R.id.text_facing);
+        mTextListed=findViewById(R.id.text_listed);
+        mTextCity=findViewById(R.id.text_city);
+
+
+
+
+
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mStorageReference= FirebaseStorage.getInstance().getReference("houses");
         mDatabaseReference= FirebaseDatabase.getInstance().getReference("houses");
@@ -142,8 +162,14 @@ public class Upload extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
 
                                     UploadDetails uploadDetails=new UploadDetails(mTextTitle.getText().toString().trim(),
-                                            mTextDescription.getText().toString().trim(), mTextArea.getText().toString().trim(),
-                                            mTextPrice.getText().toString().trim(),uri.toString());
+                                            mTextAddress.getText().toString().trim(), mTextArea.getText().toString().trim(),
+                                            mTextPrice.getText().toString().trim(),uri.toString(),mTextFloorNo.getText().toString().trim(),
+                                            mTextBedroom.getText().toString().trim(),mTextBathroom.getText().toString().trim(),
+                                            mTextBalcony.getText().toString().trim(),mTextFurnishing.getText().toString().trim(),
+                                            mTextBachelorsAllow.getText().toString().trim(),mTextMaintenance.getText().toString().trim(),
+                                            mTextTotalFloor.getText().toString().trim(),mTextCarParking.getText().toString().trim(),
+                                            mTextFacing.getText().toString().trim(), mTextListed.getText().toString().trim(),
+                                            mTextCity.getText().toString().trim());
 
                                     String getuid=FirebaseAuth.getInstance().getUid();
                                     mDatabaseReference.child(getuid).setValue(uploadDetails);
