@@ -17,6 +17,7 @@ import com.google.rpc.Help;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageView btn_rent,btn_sell;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btn_rent.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Houselist.class)));
         btn_sell.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Upload.class)));
     }
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.example_menu,menu);
         return true;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return true;
-        }
+        }*/
     @Override
     public void onBackPressed() {
         super.onBackPressed();
