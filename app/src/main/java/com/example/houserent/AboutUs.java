@@ -2,6 +2,7 @@ package com.example.houserent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -15,5 +16,10 @@ public class AboutUs extends AppCompatActivity {
         title=findViewById(R.id.house_title);
         title1=findViewById(R.id.house_title1);
         des=findViewById(R.id.house_des);
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
     }
 }

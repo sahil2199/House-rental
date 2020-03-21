@@ -9,18 +9,19 @@
             android:title="Home"
             />
         <item
-            android:id="@+id/nav_edu"
-            android:title="Seal"/>
-        <item
-            android:id="@+id/nav_exp"
-
+            android:id="@+id/nav_rent"
+            android:icon="@drawable/rent"
             android:title="Rent"/>
         <item
-            android:id="@+id/nav_skill"
-
+            android:id="@+id/nav_sell"
+            android:icon="@drawable/sell"
+            android:title="Sell"/>
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/about_us"
             android:title="About Us"/>
         <item
-            android:id="@+id/nav_resume"
+            android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
             android:title="help"/>
 
@@ -28,7 +29,7 @@
     <item android:title="actions">
         <menu>
             <item
-                android:id="@+id/nav_per"
+                android:id="@+id/nav_profile"
                 android:icon="@drawable/ic_person"
                 android:title="Profile"
                 />

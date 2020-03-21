@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     android:background="#f5f5f5"
     tools:context=".MainActivity"
-    android:id="@+id/drawerlay">
+    android:id="@+id/drawer_layout">
 
 
 
@@ -60,7 +60,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        app:menu="@menu/nevigation_drawer"
+        android:clickable="true"
+        app:menu="@menu/navigation_drawer"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

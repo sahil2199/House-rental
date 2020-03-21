@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btn_rent.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Houselist.class)));
         btn_sell.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Upload.class)));
     }
-    /*@Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.example_menu,menu);
         return true;
@@ -69,27 +69,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             startActivity(new Intent(MainActivity.this,MainActivity.class));
         }
-        if (menuItem.getItemId() == R.id.nav_edu) {
-            startActivity(new Intent(MainActivity.this,UploadDetails.class));
+        if (menuItem.getItemId() == R.id.nav_rent) {
+            startActivity(new Intent(MainActivity.this,Houselist.class));
         }
-        if (menuItem.getItemId() == R.id.nav_per) {
+        if (menuItem.getItemId() == R.id.nav_profile) {
             startActivity(new Intent(MainActivity.this,Profile.class));
             this.finish();
         }
-        if (menuItem.getItemId() == R.id.nav_exp) {
-            startActivity(new Intent(MainActivity.this,Houselist.class));
+        if (menuItem.getItemId() == R.id.nav_sell) {
+            startActivity(new Intent(MainActivity.this,Upload.class));
             this.finish();
         }
-        if (menuItem.getItemId() == R.id.nav_skill) {
+        if (menuItem.getItemId() == R.id.nav_about_us) {
+            finish();
             startActivity(new Intent(MainActivity.this,AboutUs.class));
         }
-        if (menuItem.getItemId() == R.id.nav_resume) {
+        if (menuItem.getItemId() == R.id.nav_help) {
+            finish();
             startActivity(new Intent(MainActivity.this, Help.class));
         }
 
         if(menuItem.getItemId()== R.id.nav_logout) {
             FirebaseAuth.getInstance().signOut();
-            startActivity(new Intent(MainActivity.this, MainActivity.class));
+            finish();
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
         }
 
         //drawerLayout.closeDrawers();
