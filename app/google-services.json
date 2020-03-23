@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "47795907688-ahrcapuohlt3nbgcpcnkf2drm9ti181s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.houserent",
+            "certificate_hash": "a6a5d1ce2c5eea1e88ff655236a18fe4dd1315e0"
+          }
+        },
+        {
           "client_id": "47795907688-nrcjee1b7eqbc5svi7d7nbdjuctmaguc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
