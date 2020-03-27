@@ -19,15 +19,58 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scrollView_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <ImageView
-                android:id="@+id/imageView_detail_page"
-                android:layout_width="match_parent"
+                android:id="@+id/imageView_detail_page1"
+                android:layout_width="379dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 app:srcCompat="@drawable/login" />
+
+            <ImageView
+                android:id="@+id/imageView_detail_page2"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+            <ImageView
+                android:id="@+id/imageView_detail_page3"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+            <ImageView
+                android:id="@+id/imageView_detail_page4"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+        </LinearLayout>
+            </HorizontalScrollView>
             <View
                 android:id="@+id/view"
                 android:layout_width="wrap_content"

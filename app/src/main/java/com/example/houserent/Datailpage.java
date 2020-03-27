@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -18,8 +19,9 @@ public class Datailpage extends AppCompatActivity {
     TextView total_floor_house,car_park_fix,car_park_house,facing_fix,facing_house,listed_fix;
 
     Button btn_contact;
-    ImageView img_detail_page;
+    ImageView img_detail_page1,img_detail_page2,img_detail_page3,img_detail_page4;
     ScrollView scrollView;
+    HorizontalScrollView horizontalScrollView;
     View view,view1,view3,view4,view5,view6,view9,view10,view11,view12,view13,view14,view15;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,14 @@ public class Datailpage extends AppCompatActivity {
 
         btn_contact=findViewById(R.id.contact_button);
 
-        img_detail_page=findViewById(R.id.imageView_detail_page);
+
+        img_detail_page1=findViewById(R.id.imageView_detail_page1);
+        img_detail_page2=findViewById(R.id.imageView_detail_page2);
+        img_detail_page3=findViewById(R.id.imageView_detail_page3);
+        img_detail_page4=findViewById(R.id.imageView_detail_page4);
 
         scrollView=findViewById(R.id.scrollView_detail_page);
+        horizontalScrollView=findViewById(R.id.horizontal_scrollView_imageView);
 
         price_fix=findViewById(R.id.price_fix);
         price_house=findViewById(R.id.price_house);
