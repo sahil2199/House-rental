@@ -52,7 +52,7 @@ public class Houselist extends AppCompatActivity {
 
                 for (DataSnapshot postSnapShot : dataSnapshot.getChildren()){
                     UploadDetails uploadDetails = postSnapShot.getValue(UploadDetails.class);
-                    System.out.println("House details"+uploadDetails);
+                    //System.out.println("House details"+uploadDetails);
                     mUploadDetails.add(uploadDetails);
                 }
 

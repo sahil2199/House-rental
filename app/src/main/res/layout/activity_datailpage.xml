@@ -8,7 +8,7 @@
     tools:context=".Datailpage">
 
     <ScrollView
-        android:id="@+id/scrollView1"
+        android:id="@+id/scrollView_detail_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -19,15 +19,58 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scrollView_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
+                android:id="@+id/imageView_detail_page1"
+                android:layout_width="379dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 app:srcCompat="@drawable/login" />
+
+            <ImageView
+                android:id="@+id/imageView_detail_page2"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+            <ImageView
+                android:id="@+id/imageView_detail_page3"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+            <ImageView
+                android:id="@+id/imageView_detail_page4"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                app:srcCompat="@drawable/login" />
+        </LinearLayout>
+            </HorizontalScrollView>
             <View
                 android:id="@+id/view"
                 android:layout_width="wrap_content"
@@ -41,113 +84,193 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/price_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view"
                 android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
                 android:layout_marginTop="10dp"
                 android:text="Price:"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/price"
+                android:id="@+id/price_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Price"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:text="rupees"
+                android:textSize="18dp"
+                 />
         </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView1"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/BHK_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView"
+                android:layout_below="@id/price_fix"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
-                android:text="BHK" />
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:text="BHK:" />
+
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/BHK_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView1"
+                android:layout_below="@id/imageView"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="3dp"
-                android:text="Area" />
+                android:textSize="18dp"
+                android:text="bhk"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/area_fix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_house"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:text="Area:"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/area_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:text="Sq feet"
+                android:textSize="18dp"
+                />
+
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/address_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView2"
+                android:layout_below="@id/area_fix"
                 android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
                 android:layout_marginTop="3dp"
                 android:text="Address:" />
 
             <TextView
-                android:id="@+id/locaton"
+                android:id="@+id/address_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/imageView"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
-                android:text="Location" />
+                android:text="Location"
+                android:textSize="18dp"/>
             </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/City_fix"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address_fix"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
+                android:layout_marginTop="3dp"
+                android:text="City:" />
+
+            <TextView
+                android:id="@+id/City_house"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:text="City"
+                android:textSize="18dp"/>
+        </LinearLayout>
             <View
                 android:id="@+id/view1"
                 android:layout_width="wrap_content"
                 android:layout_height="2dp"
-                android:layout_below="@+id/textView3"
+                android:layout_below="@+id/City_fix"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/Additional_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+                android:textColor="@color/colorAccent"
                 android:text="Additional Details"
-                android:textSize="20dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/Floor_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView4"
+                android:layout_below="@id/Additional_details"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Floor Number:" />
+                android:text="Floor Number:"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"/>
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/Floor_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textView4"
+                android:layout_below="@id/Additional_details"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:textSize="18dp"
                 android:text="1 st of 4 Floor" />
         </LinearLayout>
             <View
                 android:id="@+id/view3"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView5"
+                android:layout_below="@+id/Floor_fix"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -157,28 +280,32 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/Balcony_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view3"
                 android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
                 android:layout_marginTop="5dp"
-                android:text="Balconies:" />
+                android:text="Balcony:" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/Balcony_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view3"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:textSize="18dp"
                 android:text="1" />
         </LinearLayout>
             <View
                 android:id="@+id/view4"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView7"
+                android:layout_below="@+id/Balcony_fix"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -187,28 +314,32 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/Bedroom_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view4"
                 android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
                 android:layout_marginTop="5dp"
-                android:text="Bed Room:" />
+                android:text="Bedroom:" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/Bedroom_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view4"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:textSize="18dp"
                 android:text="2" />
         </LinearLayout>
             <View
                 android:id="@+id/view5"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView10"
+                android:layout_below="@+id/Bedroom_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -217,28 +348,32 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/Bathroom_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view5"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"
                 android:text="BathRoom:" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/Bathroom_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view5"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:textSize="18dp"
                 android:text="2" />
         </LinearLayout>
             <View
                 android:id="@+id/view6"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView12"
+                android:layout_below="@+id/Bathroom_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -248,88 +383,32 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/Furnish_fix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view6"
                 android:layout_marginLeft="10dp"
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
                 android:layout_marginTop="5dp"
-                android:text="Furnishing:" />
+                android:text="Furnish:" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/Furnish_house"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view6"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
+                android:textSize="18dp"
                 android:text="Furnished" />
-        </LinearLayout>
-            <View
-                android:id="@+id/view7"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_below="@+id/textView14"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorAccent"
-                tools:ignore="InvalidId" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/view7"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Super Builtup Area:" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/view7"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:text="1800ft" />
-        </LinearLayout>
-            <View
-                android:id="@+id/view8"
-                android:layout_width="wrap_content"
-                android:layout_height="1dp"
-                android:layout_below="@+id/textView16"
-                android:layout_marginTop="5dp"
-                android:background="@color/colorAccent"
-                tools:ignore="InvalidId" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/view8"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Carpet Area:" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/view8"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-                android:text="1600" />
         </LinearLayout>
             <View
                 android:id="@+id/view9"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Furnish_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -338,28 +417,32 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView19"
+                    android:id="@+id/Bachelors_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view9"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="Bachelors Allow:" />
+                    android:text="Bachelors Allow:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/Bachelors_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view9"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="yes/no" />
+                    android:text="yes/no"
+                    android:textSize="18dp"/>
             </LinearLayout>
             <View
                 android:id="@+id/view10"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Bachelors_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -368,28 +451,32 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/Maintenance_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view10"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="Maintainance:" />
+                    android:text="Maintenance:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/Maintenance_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view10"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="1600" />
+                    android:text="1600"
+                    android:textSize="18dp"/>
             </LinearLayout>
             <View
                 android:id="@+id/view11"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Maintenance_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -398,28 +485,32 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/Total_floor_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view11"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="Total Floors:" />
+                    android:text="Total Floors:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/Total_floor_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view11"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="6" />
+                    android:text="6"
+                    android:textSize="18dp"/>
             </LinearLayout>
             <View
                 android:id="@+id/view12"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Total_floor_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -428,28 +519,32 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/Car_parking_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view12"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="Car Parking:" />
+                    android:text="Car Parking:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/Car_parking_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view12"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="3" />
+                    android:text="3"
+                    android:textSize="18dp"/>
             </LinearLayout>
             <View
                 android:id="@+id/view13"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Car_parking_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -458,28 +553,32 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/Facing_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view13"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="Faceing:" />
+                    android:text="Facing:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView28"
+                    android:id="@+id/Facing_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view13"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="East/West" />
+                    android:textSize="18dp"
+                    android:text="East/West/North/South" />
             </LinearLayout>
             <View
                 android:id="@+id/view14"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/Facing_house"
                 android:layout_marginTop="5dp"
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
@@ -488,22 +587,26 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/textView29"
+                    android:id="@+id/Listed_fix"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view14"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
-                    android:text="ListedBy:" />
+                    android:text="ListedBy:"
+                    android:textSize="20dp"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
 
                 <TextView
-                    android:id="@+id/textView30"
+                    android:id="@+id/Listed_house"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view8"
+                    android:layout_below="@id/view14"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="5dp"
-                    android:text="Dealer" />
+                    android:textSize="18dp"
+                    android:text="Dealer/Owner" />
             </LinearLayout>
             <View
                 android:id="@+id/view15"
@@ -514,7 +617,7 @@
                 android:background="@color/colorAccent"
                 tools:ignore="InvalidId" />
             <Button
-                android:id="@+id/contact"
+                android:id="@+id/contact_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"

@@ -17,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.facebook.FacebookSdk.getApplicationContext;
+
 
 public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHolder>{
     private Context mContext;
