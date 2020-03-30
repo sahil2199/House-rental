@@ -45,11 +45,21 @@ public class Profile extends AppCompatActivity {
         databaseReference.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Userprofile userprofile=dataSnapshot.getValue(Userprofile.class);
-                firstname.setText("FirstName:" + userprofile.getFirstName());
-                lastname.setText("LastName:" + userprofile.getLastName());
-                email.setText("Email:" + userprofile.getTxtEmail());
-                mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
+
+                try {
+                    Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
+                    firstname.setText("FirstName:" + userprofile.getFirstName());
+                    lastname.setText("LastName:" + userprofile.getLastName());
+                    email.setText("Email:" + userprofile.getTxtEmail());
+                    mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
+
+                }
+                catch(NullPointerException nE){
+                    Intent i=new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
+                    Toast.makeText(Profile.this, "Sorry, We are unable to fetch data !", Toast.LENGTH_LONG).show();
+
+                }
 
             }
 
