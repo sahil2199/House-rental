@@ -12,6 +12,7 @@ public class AboutUs extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_about_us);
         title=findViewById(R.id.house_title);
         title1=findViewById(R.id.house_title1);

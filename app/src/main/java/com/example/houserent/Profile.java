@@ -35,12 +35,8 @@ public class Profile extends AppCompatActivity {
         lastname=findViewById(R.id.name);
         email=findViewById(R.id.email);
         mobileno=findViewById(R.id.mnum);
-
         edit=findViewById(R.id.editbtn);
-
         temp=findViewById(R.id.temp);
-
-
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -73,7 +69,7 @@ public class Profile extends AppCompatActivity {
         temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Profile.this,Datailpage.class));
+                startActivity(new Intent(Profile.this,Contact.class));
             }
         });
     }
