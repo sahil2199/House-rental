@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     android:orientation="vertical"
     android:padding="30dp"
+    android:background="@drawable/back1"
     tools:context=".SignupActivity">
 
     <com.google.android.material.textfield.TextInputEditText
@@ -19,7 +19,8 @@
         android:focusableInTouchMode="true"
         android:hint="First Name"
         android:inputType="text"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
@@ -33,7 +34,8 @@
         android:focusableInTouchMode="true"
         android:hint="Last Name"
         android:inputType="text"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
@@ -47,7 +49,8 @@
         android:focusableInTouchMode="true"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
@@ -61,7 +64,8 @@
         android:focusableInTouchMode="true"
         android:hint="Mobile Number"
         android:inputType="phone"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
@@ -75,7 +79,8 @@
         android:focusableInTouchMode="true"
         android:hint="New Password"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
@@ -89,7 +94,8 @@
         android:focusableInTouchMode="true"
         android:hint="Confirm Password"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20sp" />
 
 
