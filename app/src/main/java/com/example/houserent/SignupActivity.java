@@ -47,7 +47,7 @@ public class SignupActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mAuth=FirebaseAuth.getInstance();
-        getSupportActionBar().setTitle("Register Houserent");
+        getSupportActionBar().setTitle("Register");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override

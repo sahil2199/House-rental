@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Help"></activity>
+        <activity android:name=".Help"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".Contact" />
         <activity
             android:name=".AboutUs"
