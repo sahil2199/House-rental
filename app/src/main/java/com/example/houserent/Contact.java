@@ -42,10 +42,11 @@ public class Contact extends AppCompatActivity {
         mtxtemail = findViewById(R.id.pemail);
         mmnumber = findViewById(R.id.pnum1);
         btn_enow = findViewById(R.id.contact_button);
+        getSupportActionBar().setTitle("Contact");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         DatabaseReference databaseReference=firebaseDatabase.getReference();
         databaseReference.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override

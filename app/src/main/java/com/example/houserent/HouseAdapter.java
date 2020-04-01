@@ -38,9 +38,9 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
     public void onBindViewHolder(@NonNull HouseViewHolder holder, int position) {
         UploadDetails uploadCurrent = mUploadDetailes.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
-        holder.textViewPrice.setText(uploadCurrent.getPrice());
+        holder.textViewPrice.setText("Rs "+uploadCurrent.getPrice());
         holder.textViewAddress.setText(uploadCurrent.getAddress());
-        holder.textViewArea.setText(uploadCurrent.getArea());
+        holder.textViewArea.setText(uploadCurrent.getArea()+" SF");
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
 
         holder.cardView.setOnClickListener(v -> {//card view onclick listener

@@ -87,6 +87,8 @@ public class Datailpage extends AppCompatActivity {
         view13=findViewById(R.id.view13);
         view14=findViewById(R.id.view14);
         view15=findViewById(R.id.view15);
+        getSupportActionBar().setTitle("House Detail");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 

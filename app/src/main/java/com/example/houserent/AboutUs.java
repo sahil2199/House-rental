@@ -17,6 +17,8 @@ public class AboutUs extends AppCompatActivity {
         title=findViewById(R.id.house_title);
         title1=findViewById(R.id.house_title1);
         des=findViewById(R.id.house_des);
+        getSupportActionBar().setTitle("About us");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     @Override
     public void onBackPressed() {
