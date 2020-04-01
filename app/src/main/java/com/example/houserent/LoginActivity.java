@@ -58,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
         btn_reg=findViewById(R.id.register);
         mAuth=FirebaseAuth.getInstance();
         getSupportActionBar().setTitle("Login");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
