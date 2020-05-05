@@ -35,25 +35,32 @@ public class Profile extends AppCompatActivity {
         lastname=findViewById(R.id.name);
         email=findViewById(R.id.email);
         mobileno=findViewById(R.id.mnum);
-
         edit=findViewById(R.id.editbtn);
-
         temp=findViewById(R.id.temp);
-
-
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
+        getSupportActionBar().setTitle("Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         DatabaseReference databaseReference=firebaseDatabase.getReference();
         databaseReference.child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Userprofile userprofile=dataSnapshot.getValue(Userprofile.class);
-                firstname.setText("FirstName:" + userprofile.getFirstName());
-                lastname.setText("LastName:" + userprofile.getLastName());
-                email.setText("Email:" + userprofile.getTxtEmail());
-                mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
+
+                try {
+                    Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
+                    firstname.setText("FirstName:" + userprofile.getFirstName());
+                    lastname.setText("LastName:" + userprofile.getLastName());
+                    email.setText("Email:" + userprofile.getTxtEmail());
+                    mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
+
+                }
+                catch(NullPointerException nE){
+                    Intent i=new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
+                    Toast.makeText(Profile.this, "Sorry, We are unable to fetch data !", Toast.LENGTH_LONG).show();
+
+                }
 
             }
 
@@ -73,7 +80,7 @@ public class Profile extends AppCompatActivity {
         temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Profile.this,Datailpage.class));
+                startActivity(new Intent(Profile.this,Contact.class));
             }
         });
     }

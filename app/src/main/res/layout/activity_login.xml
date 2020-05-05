@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/back1">
 
 
     <ImageView
@@ -27,7 +28,8 @@
         android:focusableInTouchMode="true"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/background"
+        android:textColor="@color/background"
         android:textSize="20sp" />
 
 
@@ -41,7 +43,8 @@
         android:focusableInTouchMode="true"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/background"
+        android:textColor="@color/background"
         android:textSize="20sp" />
 
 

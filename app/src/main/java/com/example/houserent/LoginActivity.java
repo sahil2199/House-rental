@@ -1,7 +1,6 @@
 package com.example.houserent;
 
-import
-        androidx.annotation.NonNull;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,17 +8,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -31,29 +21,21 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FacebookAuthProvider;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
     TextInputEditText txtemail,lpwd;
     Button btn_login,btn_reg;
     SignInButton btn_google;
-    //LoginButton btn_facebook;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
-    public FirebaseDatabase fd;
-    DatabaseReference ref;
-    CallbackManager callbackManager;
-    private int requestCode;
-    private int resultCode;
-    private Intent data;
 
 
 
@@ -75,7 +57,9 @@ public class LoginActivity extends AppCompatActivity {
         btn_login=findViewById(R.id.login);
         btn_reg=findViewById(R.id.register);
         mAuth=FirebaseAuth.getInstance();
-  //      btn_facebook=(LoginButton) findViewById(R.id.fb_login_button);
+        getSupportActionBar().setTitle("Login");
+
+
 
        //Google sign in
 
@@ -95,16 +79,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-/*
-
-        //Facebook Login
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        callbackManager = CallbackManager.Factory.create();
-        btn_facebook.setPermissions(Arrays.asList("email"));
-
-
-
-*/
 
 
 
@@ -164,7 +138,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        callbackManager.onActivityResult(requestCode,resultCode,data);
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
@@ -202,43 +175,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
- /*   public void facebookLoginButton(View v)
-    {
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                handleFacebookToken(loginResult.getAccessToken());
-            }
-
-            @Override
-            public void onCancel() {
-                Toast.makeText(LoginActivity.this, "User cancelled it !!", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void handleFacebookToken(AccessToken accessToken) {
-        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    FirebaseUser mFirebaseUser = mAuth.getCurrentUser();
-                    updateUI(mFirebaseUser);
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                }
-                else{
-                    Toast.makeText(LoginActivity.this, "Could not register to firebase", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-        });
-    }*/
 
     @Override
     public void onBackPressed() {
@@ -250,8 +186,5 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(a);
     }
 
-    /*private void updateUI(FirebaseUser mFirebaseUser) {
-        Toast.makeText(this, mFirebaseUser.getEmail(), Toast.LENGTH_LONG).show();
-    }*/
 
 }

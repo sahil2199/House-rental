@@ -4,6 +4,7 @@
     package="com.example.houserent">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
 
     <application
         android:icon="@drawable/logo"
@@ -12,14 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutUs"
+        <activity android:name=".Help"
             android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".Contact" />
+        <activity
+            android:name=".AboutUs"
+            android:label="AboutUs"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".Datailpage" />
         <activity
             android:name=".updateprofile"
             android:parentActivityName=".Profile" />
         <activity
             android:name=".Profile"
+            android:label="Profile"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
         <activity
@@ -30,6 +37,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".SignupActivity"
+            android:label="Sign Up"
             android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".SplashScreen"
@@ -43,10 +51,6 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme" />
-
-
-
-
     </application>
 
 </manifest>

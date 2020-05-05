@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back6"
     tools:context=".Profile">
 
     <TextView
@@ -19,8 +20,8 @@
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="484dp"
         android:text="FirstName"
-        android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorAccent"
+        android:textColor="@color/background"
+        android:textColorHint="@color/background"
         android:textSize="20dp" />
 
     <TextView
@@ -36,7 +37,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="229dp"
         android:text="Mobile Number"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/background"
         android:textSize="20dp" />
 
     <TextView
@@ -52,7 +53,7 @@
         android:layout_marginEnd="27dp"
         android:layout_marginBottom="430dp"
         android:text="LastName"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/background"
         android:textSize="20dp" />
 
     <ImageView
@@ -77,7 +78,7 @@
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="282dp"
         android:text="Email"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/background"
         android:textSize="20dp" />
 
 

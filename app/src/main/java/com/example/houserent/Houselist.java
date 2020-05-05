@@ -34,7 +34,6 @@ public class Houselist extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_houselist);
         mRecyclerView=findViewById(R.id.recycler_view);

@@ -122,6 +122,7 @@ public class Upload extends AppCompatActivity {
         Intent intent=new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
+      //  intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         startActivityForResult(intent,PICK_IMAGE_REQ);
     }
     @Override
