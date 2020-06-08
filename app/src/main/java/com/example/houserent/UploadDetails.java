@@ -1,6 +1,8 @@
 package com.example.houserent;
 
-public class UploadDetails {
+import java.io.Serializable;
+
+public class UploadDetails implements Serializable {
     private String mTitle;
     private String mImageUrl;
     private String mAddress;
@@ -18,6 +20,8 @@ public class UploadDetails {
     private String mFacing;
     private String mListed;
     private String mCity;
+    private String mId;
+    private String mavailable;
 
 
 
@@ -26,7 +30,7 @@ public class UploadDetails {
     }
     public UploadDetails(String title,String address,String area,String price,String imageUrl,String floorNo,String bedroom,String bathroom,
                          String balcony,String furnishing,String bachelorsAllow,String maintenance,String totalFloor,String carParking,
-                         String facing,String listed,String city){
+                         String facing,String listed,String city,String id,String available){
         mTitle=title;
         mArea=area;
         mAddress=address;
@@ -44,7 +48,14 @@ public class UploadDetails {
         mFacing=facing;
         mListed=listed;
         mCity=city;
+        mId=id;
+        mavailable=available;
     }
+
+
+    public String getAvailable(){ return mavailable;}
+    public void setAvailable(String available) { mavailable=available; }
+
 
     public String getTitle(){
         return mTitle;
@@ -110,7 +121,7 @@ public class UploadDetails {
         return mBalcony;
     }
     public void setBalcony(String balcony){
-        mArea=balcony;
+        mBalcony=balcony;
     }
 
     public String getFurnishing(){
@@ -169,5 +180,9 @@ public class UploadDetails {
     public void setCity(String city){
         mCity=city;
     }
+
+
+    public String getId() { return mId; }
+    public void setId(String id) {mId=id;}
 }
 

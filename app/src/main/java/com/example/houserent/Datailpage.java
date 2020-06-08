@@ -11,6 +11,11 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
 public class Datailpage extends AppCompatActivity {
     TextView price_fix,price_house,bhk_fix,bhk_house,area_fix,area_house,address_fix,address_house;
     TextView city_fix,city_house,additional_details,floor_fix,floor_house,balcony_fix,balcony_house;
@@ -23,6 +28,8 @@ public class Datailpage extends AppCompatActivity {
     ScrollView scrollView;
     HorizontalScrollView horizontalScrollView;
     View view,view1,view3,view4,view5,view6,view9,view10,view11,view12,view13,view14,view15;
+
+    UploadDetails upDetail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +79,12 @@ public class Datailpage extends AppCompatActivity {
         facing_house=findViewById(R.id.Facing_house);
         listed_fix=findViewById(R.id.Listed_fix);
         listed_house=findViewById(R.id.Listed_house);
-
-
+        upDetail=new UploadDetails();
+        System.out.println("Detail page 1");
+        ArrayList<UploadDetails> list = (ArrayList<UploadDetails>) getIntent().getSerializableExtra("detail");
+        System.out.println("Detail page 2");
+        upDetail=list.get(getIntent().getIntExtra("pos",0));
+        System.out.println("Detail page 3");
         view=findViewById(R.id.view);
         view1=findViewById(R.id.view1);
         view3=findViewById(R.id.view3);
@@ -91,8 +102,23 @@ public class Datailpage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-
-
-
+        price_house.setText(upDetail.getPrice());
+        bhk_house.setText(upDetail.getBedroom());
+        area_house.setText(upDetail.getArea());
+        address_house.setText(upDetail.getAddress());
+        city_house.setText(upDetail.getCity());
+        floor_house.setText(upDetail.getFloorNo());
+        balcony_house.setText(upDetail.getBalcony());
+        bedroom_house.setText(upDetail.getBedroom());
+        bathroom_house.setText(upDetail.getBathroom());
+        furnish_house.setText(upDetail.getFurnishing());
+        bachelor_house.setText(upDetail.getBachelorsAllow());
+        maintenance_house.setText(upDetail.getMaitenance());
+        total_floor_house.setText(upDetail.getTotalFloor());
+        car_park_house.setText(upDetail.getCarParking());
+        facing_house.setText(upDetail.getFacing());
+        listed_house.setText(upDetail.getListed());
+        //Picasso.get().load(upDetail.getmImageUrl()).fit().into(img_detail_page1);
+        Glide.with(getApplicationContext()).load(upDetail.getmImageUrl()).into(img_detail_page1);
     }
 }

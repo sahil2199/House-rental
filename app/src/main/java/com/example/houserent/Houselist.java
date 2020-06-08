@@ -29,7 +29,7 @@ public class Houselist extends AppCompatActivity {
     private HouseAdapter mAdapter;
 
     private DatabaseReference mDatabaseReference;
-    private List<UploadDetails> mUploadDetails;
+    private ArrayList<UploadDetails> mUploadDetails;
     private ProgressBar mProgressCircle;
 
     @Override
@@ -52,7 +52,14 @@ public class Houselist extends AppCompatActivity {
                 for (DataSnapshot postSnapShot : dataSnapshot.getChildren()){
                     UploadDetails uploadDetails = postSnapShot.getValue(UploadDetails.class);
                     //System.out.println("House details"+uploadDetails);
-                    mUploadDetails.add(uploadDetails);
+                    String avail=uploadDetails.getAvailable().toString();
+                    System.out.println("Available"+avail);
+                    if(avail.equals("Yes")) {
+                        System.out.println("HERE"+avail);
+                        mUploadDetails.add(uploadDetails);
+                    }
+                    //mUploadDetails=new UploadDetails();
+                    //mUploadDetails=uploadDetails;
                 }
 
                 mAdapter = new HouseAdapter(Houselist.this,mUploadDetails);

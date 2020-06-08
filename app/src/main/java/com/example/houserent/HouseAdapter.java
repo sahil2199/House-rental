@@ -3,6 +3,7 @@ package com.example.houserent;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -21,9 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHolder>{
     private Context mContext;
-    private List<UploadDetails> mUploadDetailes;
+    private ArrayList<UploadDetails> mUploadDetailes;
 
-    public HouseAdapter(Context context , List<UploadDetails> uploadDetails){
+    public HouseAdapter(Context context ,ArrayList<UploadDetails> uploadDetails){
         mContext=context;
         mUploadDetailes=uploadDetails;
     }
@@ -40,10 +42,20 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         holder.textViewTitle.setText(uploadCurrent.getTitle());
         holder.textViewPrice.setText("Rs "+uploadCurrent.getPrice());
         holder.textViewAddress.setText(uploadCurrent.getAddress());
-        holder.textViewArea.setText(uploadCurrent.getArea()+" SF");
+        String ar=uploadCurrent.getArea()+" SF";
+        holder.textViewArea.setText(ar);
+        System.out.println(ar+"Area is ");
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
 
         holder.cardView.setOnClickListener(v -> {//card view onclick listener
+            Intent intent=new Intent(mContext,Datailpage.class);
+            //Bundle bundle=new Bundle();
+            //bundle.putParcelableArrayList("detail",);
+            intent.putExtra("detail",mUploadDetailes);
+            intent.putExtra("pos",position);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            System.out.println("I am in video adaptor");
+            mContext.startActivity(intent);
 
 
         });
