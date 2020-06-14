@@ -29,7 +29,7 @@ public class updateprofile extends AppCompatActivity {
         setContentView(R.layout.activity_updateprofile);
         newFirstName=findViewById(R.id.editfirstname);
         newLastName=findViewById(R.id.editlastname);
-        newEmail=findViewById(R.id.editemail);
+        newEmail=findViewById(R.id.editmail);
         newNumber=findViewById(R.id.editmobilenumber);
         save=findViewById(R.id.updatebtn);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

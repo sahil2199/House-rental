@@ -12,75 +12,77 @@
         android:id="@+id/title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact Seller"
+        android:text="Contact"
         android:layout_margin="10dp"
         android:textSize="25dp"
         android:textStyle="bold"
         android:textColor="@color/background"
         />
-    <TextView
-        android:id="@+id/firstname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Name:"
-        android:textSize="12dp"
-        android:layout_below="@+id/title1"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp"
-        android:textColor="@color/background"
-        />
+
 
     <EditText
-        android:id="@+id/fname"
-        android:layout_width="190dp"
+        android:id="@+id/msubject"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="1dp"
-        android:layout_below="@+id/firstname"
+        android:layout_below="@+id/subject"
         android:ems="10"
-        android:hint="Enter First Name"
+        android:hint="Enter Subject"
         android:textColor="@color/background"
         android:textColorHint="@color/background"
         android:inputType="textPersonName"
         android:textSize="20dp" />
-    <TextView
-        android:id="@+id/Lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Name:"
-        android:textSize="12dp"
-        android:layout_below="@+id/title1"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="210dp"
-        android:textColor="@color/background"
-        />
+
 
     <EditText
-        android:id="@+id/lname"
-        android:layout_width="185dp"
+        android:id="@+id/message_text"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="210dp"
+        android:layout_below="@+id/message"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="1dp"
-        android:layout_below="@+id/firstname"
         android:ems="10"
-        android:hint="Enter Last Name"
+        android:hint="Enter Your Message"
+        android:inputType="textPersonName"
+        android:lines="10"
         android:textColor="@color/background"
         android:textColorHint="@color/background"
-        android:inputType="textPersonName"
         android:textSize="20dp" />
 
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fname"
-        android:text="Email:"
-        android:textSize="12dp"
+        android:layout_below="@+id/title1"
+        android:text="To:"
+        android:textSize="16dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:textColor="@color/background"
         />
-
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pemail"
+        android:text="Subject:"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/background"
+        />
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/msubject"
+        android:text="Message:"
+        android:textSize="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/background"
+        />
     <EditText
         android:id="@+id/pemail"
         android:layout_width="380dp"
@@ -96,39 +98,16 @@
         android:scrollbarSize="4dp"
         android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/pemail"
-        android:text="Country:"
-        android:textSize="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="15dp"
-        android:textColor="@color/background"
-        />
+
+
 
     <EditText
-        android:id="@+id/pnum"
-        android:layout_width="50dp"
+        android:id="@+id/pnum1"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="1dp"
-        android:layout_below="@+id/num"
-        android:ems="10"
-        android:hint="+91"
-        android:inputType="textPersonName"
-        android:scrollbarSize="4dp"
-        android:textStyle="bold"
-        android:textColorHint="@color/background"
-        android:textSize="20dp" />
-    <EditText
-        android:id="@+id/pnum1"
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="1dp"
-        android:layout_below="@+id/num"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/message_text"
         android:ems="10"
         android:hint="Enter Mobile Number"
         android:textColor="@color/background"
