@@ -82,7 +82,7 @@ public class Upload extends AppCompatActivity {
         mTextFacing=findViewById(R.id.text_facing);
         mTextListed=findViewById(R.id.text_listed);
         mTextCity=findViewById(R.id.text_city);
-
+        ImageUri=new ArrayList<>();
 
 
 
@@ -135,8 +135,10 @@ public class Upload extends AppCompatActivity {
 
         if(requestCode == PICK_IMAGE_REQ && resultCode == RESULT_OK && data != null && data.getData()!= null){
             mImageUri = data.getData();
-            ImageUri.add(mImageUri);
-            Picasso.get().load(mImageUri).into(mImageView);
+            if(mImageUri!=null) {
+                ImageUri.add(mImageUri);
+                Picasso.get().load(mImageUri).into(mImageView);
+            }
             //mImageView.setImageURI(mImageUri);
         }
     }
@@ -173,6 +175,7 @@ public class Upload extends AppCompatActivity {
                                 public void onSuccess(Uri uri) {
 
                                     String id= String.valueOf(System.currentTimeMillis());
+                                    String getuid=FirebaseAuth.getInstance().getUid();
                                     UploadDetails uploadDetails=new UploadDetails(mTextTitle.getText().toString().trim(),
                                             mTextAddress.getText().toString().trim(), mTextArea.getText().toString().trim(),
                                             mTextPrice.getText().toString().trim(),uri.toString(),mTextFloorNo.getText().toString().trim(),
@@ -181,10 +184,11 @@ public class Upload extends AppCompatActivity {
                                             mTextBachelorsAllow.getText().toString().trim(),mTextMaintenance.getText().toString().trim(),
                                             mTextTotalFloor.getText().toString().trim(),mTextCarParking.getText().toString().trim(),
                                             mTextFacing.getText().toString().trim(), mTextListed.getText().toString().trim(),
-                                            mTextCity.getText().toString().trim(),id,"Yes");
+                                            mTextCity.getText().toString().trim(),getuid,"Yes");
 
-                                    String getuid=FirebaseAuth.getInstance().getUid();
-                                    mDatabaseReference.child(getuid).child(id).setValue(uploadDetails);
+                                    mDatabaseReference.child(id).setValue(uploadDetails);
+                                    mDatabaseReference=FirebaseDatabase.getInstance().getReference().child("Users").child(getuid).child("house");
+                                    mDatabaseReference.child(id).setValue(uploadDetails);
                                     Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
