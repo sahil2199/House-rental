@@ -53,7 +53,7 @@ public class Upload extends AppCompatActivity {
     private DatabaseReference mDatabaseReference;
     private FirebaseUser currentFirebaseUser ;
     private StorageTask mUploadtask;
-
+    String sellerID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +92,7 @@ public class Upload extends AppCompatActivity {
         mStorageReference= FirebaseStorage.getInstance().getReference("houses");
         mDatabaseReference= FirebaseDatabase.getInstance().getReference("houses");
         currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-
+        sellerID = currentFirebaseUser.getUid();
 
         mButtonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,7 +184,7 @@ public class Upload extends AppCompatActivity {
                                             mTextBachelorsAllow.getText().toString().trim(),mTextMaintenance.getText().toString().trim(),
                                             mTextTotalFloor.getText().toString().trim(),mTextCarParking.getText().toString().trim(),
                                             mTextFacing.getText().toString().trim(), mTextListed.getText().toString().trim(),
-                                            mTextCity.getText().toString().trim(),getuid,"Yes");
+                                            mTextCity.getText().toString().trim(),getuid,"Yes",sellerID);
 
                                     mDatabaseReference.child(id).setValue(uploadDetails);
                                     mDatabaseReference=FirebaseDatabase.getInstance().getReference().child("Users").child(getuid).child("house");

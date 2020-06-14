@@ -22,15 +22,22 @@ public class UploadDetails implements Serializable {
     private String mCity;
     private String mId;
     private String mavailable;
+    private String sellerID;
 
+    public String getSellerID() {
+        return sellerID;
+    }
 
+    public void setSellerID(String sellerID) {
+        this.sellerID = sellerID;
+    }
 
     public UploadDetails(){
         //Empty Constructor
     }
     public UploadDetails(String title,String address,String area,String price,String imageUrl,String floorNo,String bedroom,String bathroom,
                          String balcony,String furnishing,String bachelorsAllow,String maintenance,String totalFloor,String carParking,
-                         String facing,String listed,String city,String id,String available){
+                         String facing,String listed,String city,String id,String available,String sellerID){
         mTitle=title;
         mArea=area;
         mAddress=address;
@@ -50,6 +57,7 @@ public class UploadDetails implements Serializable {
         mCity=city;
         mId=id;
         mavailable=available;
+        this.sellerID = sellerID;
     }
 
 

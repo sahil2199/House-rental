@@ -2,6 +2,7 @@ package com.example.houserent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
@@ -28,7 +29,7 @@ public class Datailpage extends AppCompatActivity {
     ScrollView scrollView;
     HorizontalScrollView horizontalScrollView;
     View view,view1,view3,view4,view5,view6,view9,view10,view11,view12,view13,view14,view15;
-
+    String sellerID;
     UploadDetails upDetail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,5 +121,15 @@ public class Datailpage extends AppCompatActivity {
         listed_house.setText(upDetail.getListed());
         //Picasso.get().load(upDetail.getmImageUrl()).fit().into(img_detail_page1);
         Glide.with(getApplicationContext()).load(upDetail.getmImageUrl()).into(img_detail_page1);
+        sellerID = upDetail.getSellerID();
+        btn_contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Datailpage.this,Contact.class);
+                intent.putExtra("sellerId",sellerID);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
     }
 }
