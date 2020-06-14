@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 public class Contact extends AppCompatActivity {
     private TextView contect,to,subject,message;
     private EditText memail,msubject,msg,mobile_no;
-    private Button
+    private Button send_email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
