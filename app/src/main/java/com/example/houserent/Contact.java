@@ -3,8 +3,11 @@ package com.example.houserent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -22,17 +25,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Contact extends AppCompatActivity {
-    private TextView contect,to,subject,message;
-    private EditText memail,msubject,msg,mobile_no;
+    private TextView contect, to, subject, message;
+    private EditText memail, msubject, msg, mobile_no;
     private Button send_email;
     ImageButton btCall;
     String sellerID;
     DatabaseReference databaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
-        send_email=findViewById(R.id.contact_button);
+        send_email = findViewById(R.id.contact_button);
         memail = findViewById(R.id.pemail);
         msubject = findViewById(R.id.msubject);
         msg = findViewById(R.id.message_text);
@@ -68,12 +72,22 @@ public class Contact extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String phone = mobile_no.getText().toString();
-                if(phone.isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Please Enter Number",Toast.LENGTH_SHORT).show();
-                }else{
+                if (phone.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Number", Toast.LENGTH_SHORT).show();
+                } else {
                     String s = "tel:" + phone;
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse(s));
+                    if (ActivityCompat.checkSelfPermission( Contact.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return;
+                    }
                     startActivity(intent);
                 }
             }
