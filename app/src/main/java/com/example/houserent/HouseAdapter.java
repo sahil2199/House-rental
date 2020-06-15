@@ -40,11 +40,11 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
     public void onBindViewHolder(@NonNull HouseViewHolder holder, int position) {
         UploadDetails uploadCurrent = mUploadDetailes.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
-        holder.textViewPrice.setText("Rs "+uploadCurrent.getPrice());
+        holder.textViewPrice.setText(uploadCurrent.getPrice());
         holder.textViewAddress.setText(uploadCurrent.getAddress());
-        String ar=uploadCurrent.getArea()+" SF";
+        String ar=uploadCurrent.getArea();
         holder.textViewArea.setText(ar);
-        System.out.println(ar+"Area is ");
+
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
 
         holder.cardView.setOnClickListener(v -> {//card view onclick listener
@@ -54,7 +54,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
             intent.putExtra("detail",mUploadDetailes);
             intent.putExtra("pos",position);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            System.out.println("I am in house adaptor");
+            //System.out.println("I am in house adaptor");
             mContext.startActivity(intent);
 
 

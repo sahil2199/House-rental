@@ -13,12 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MyHouse"></activity>
-        <activity android:name=".MyUploads"></activity>
+        <activity android:name=".MyHouse"
+            android:parentActivityName=".MyUploads"></activity>
+        <activity android:name=".MyUploads"
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".Help"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Contact" />
+        <activity android:name=".Contact"
+            android:parentActivityName=".Datailpage"/>
         <activity
             android:name=".AboutUs"
             android:label="AboutUs"
@@ -26,6 +29,7 @@
         <activity
             android:name=".Datailpage"
             android:parentActivityName=".Houselist" />
+
         <activity
             android:name=".updateprofile"
             android:parentActivityName=".Profile" />

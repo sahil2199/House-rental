@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -110,9 +112,9 @@ public class MyHouse extends AppCompatActivity {
         upDetail=list.get(pos);
 
 
-        price_house.setText("Rs "+upDetail.getPrice());
+        price_house.setText(upDetail.getPrice());
         bhk_house.setText(upDetail.getBedroom());
-        area_house.setText(upDetail.getArea()+" Sqf");
+        area_house.setText(upDetail.getArea());
         address_house.setText(upDetail.getAddress());
         city_house.setText(upDetail.getCity());
         floor_house.setText(upDetail.getFloorNo());
@@ -121,21 +123,21 @@ public class MyHouse extends AppCompatActivity {
         bathroom_house.setText(upDetail.getBathroom());
         furnish_house.setText(upDetail.getFurnishing());
         bachelor_house.setText(upDetail.getBachelorsAllow());
-        maintenance_house.setText("Rs "+upDetail.getMaitenance());
+        maintenance_house.setText(upDetail.getMaitenance());
         total_floor_house.setText(upDetail.getTotalFloor());
         car_park_house.setText(upDetail.getCarParking());
         facing_house.setText(upDetail.getFacing());
         listed_house.setText(upDetail.getListed());
         Glide.with(getApplicationContext()).load(upDetail.getmImageUrl()).into(img_detail_page1);
         available_house.setText(upDetail.getAvailable());
-        System.out.println("User id 1"+upDetail.getId());
+       // System.out.println("User id 1"+upDetail.getId());
         svbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 firebaseDatabase=FirebaseDatabase.getInstance();
                 databaseReference=firebaseDatabase.getReference().child("houses").child(upDetail.getId());//.setValue(upDetail);
-                System.out.println("USer id"+upDetail.getId());
-                System.out.println("why");
+                //System.out.println("USer id"+upDetail.getId());
+                //System.out.println("why");
                 UploadDetails uploadDetails=new UploadDetails(upDetail.getTitle(),
                         address_house.getText().toString().trim(), area_house.getText().toString().trim(),
                         price_house.getText().toString().trim(),upDetail.getmImageUrl().toString(),floor_house.getText().toString().trim(),
@@ -151,5 +153,26 @@ public class MyHouse extends AppCompatActivity {
                 startActivity(new Intent(MyHouse.this,MainActivity.class));
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.profile){
+            startActivity(new Intent(this,Profile.class));
+
+            return true;
+        }
+        if(id==R.id.sign_out){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+            return true;
+        }
+        if(id==android.R.id.home)
+        {
+            Intent intent=new Intent(MyHouse.this,MyUploads.class);
+            startActivity(intent);
+        }
+        return true;
     }
 }

@@ -34,11 +34,11 @@ public class MyHouseadapter extends RecyclerView.Adapter<MyHouseadapter.HouseVie
     public void onBindViewHolder(HouseViewHolder1 holder, int position) {
         UploadDetails uploadCurrent = uploadDetails.get(position);
         holder.textViewTitle.setText(uploadCurrent.getTitle());
-        holder.textViewPrice.setText("Rs " + uploadCurrent.getPrice());
+        holder.textViewPrice.setText( uploadCurrent.getPrice());
         holder.textViewAddress.setText(uploadCurrent.getAddress());
-        String ar = uploadCurrent.getArea() + " SF";
+        String ar = uploadCurrent.getArea() ;
         holder.textViewArea.setText(ar);
-        System.out.println(ar + "Area is ");
+        System.out.println(ar);
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

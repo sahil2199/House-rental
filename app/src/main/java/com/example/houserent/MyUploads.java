@@ -50,7 +50,7 @@ public class MyUploads extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseAuth.getCurrentUser().getUid()).child("house");
         getSupportActionBar().setTitle("House List");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        System.out.println("In myuploads");
+       // System.out.println("In myuploads");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override

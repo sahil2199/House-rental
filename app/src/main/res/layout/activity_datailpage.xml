@@ -43,33 +43,7 @@
                 app:srcCompat="@drawable/login"
                 android:adjustViewBounds="true"/>
 
-            <ImageView
-                android:id="@+id/imageView_detail_page2"
-                android:layout_width="379dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                app:srcCompat="@drawable/login" />
-            <ImageView
-                android:id="@+id/imageView_detail_page3"
-                android:layout_width="379dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                app:srcCompat="@drawable/login" />
-            <ImageView
-                android:id="@+id/imageView_detail_page4"
-                android:layout_width="379dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                app:srcCompat="@drawable/login" />
+
         </LinearLayout>
             </HorizontalScrollView>
             <View

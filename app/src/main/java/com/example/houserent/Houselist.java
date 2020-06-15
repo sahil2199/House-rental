@@ -54,9 +54,9 @@ public class Houselist extends AppCompatActivity {
                     UploadDetails uploadDetails = postSnapShot.getValue(UploadDetails.class);
                     //System.out.println("House details"+uploadDetails);
                     String avail=uploadDetails.getAvailable().toString();
-                    System.out.println("Available"+avail);
-                    if(avail.equals("Yes")) {
-                        System.out.println("HERE"+avail);
+                  //  System.out.println("Available"+avail);
+                    if(avail.equals("Yes") || avail.equals("yes") || avail.equals("YES")) {
+                       // System.out.println("HERE"+avail);
                         mUploadDetails.add(uploadDetails);
                     }
                     //mUploadDetails=new UploadDetails();

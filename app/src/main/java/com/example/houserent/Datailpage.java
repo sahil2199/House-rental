@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -13,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ public class Datailpage extends AppCompatActivity {
     TextView total_floor_house,car_park_fix,car_park_house,facing_fix,facing_house,listed_fix;
 
     Button btn_contact;
-    ImageView img_detail_page1,img_detail_page2,img_detail_page3,img_detail_page4;
+    ImageView img_detail_page1;
     ScrollView scrollView;
     HorizontalScrollView horizontalScrollView;
     View view,view1,view3,view4,view5,view6,view9,view10,view11,view12,view13,view14,view15;
@@ -40,9 +42,7 @@ public class Datailpage extends AppCompatActivity {
 
 
         img_detail_page1=findViewById(R.id.imageView_detail_page1);
-        img_detail_page2=findViewById(R.id.imageView_detail_page2);
-        img_detail_page3=findViewById(R.id.imageView_detail_page3);
-        img_detail_page4=findViewById(R.id.imageView_detail_page4);
+
 
         scrollView=findViewById(R.id.scrollView_detail_page);
         horizontalScrollView=findViewById(R.id.horizontal_scrollView_imageView);
@@ -83,9 +83,10 @@ public class Datailpage extends AppCompatActivity {
         upDetail=new UploadDetails();
         System.out.println("Detail page 1");
         ArrayList<UploadDetails> list = (ArrayList<UploadDetails>) getIntent().getSerializableExtra("detail");
-        System.out.println("Detail page 2");
+     //   System.out.println("Detail page 2");
+        assert list != null;
         upDetail=list.get(getIntent().getIntExtra("pos",0));
-        System.out.println("Detail page 3");
+      //  System.out.println("Detail page 3");
         view=findViewById(R.id.view);
         view1=findViewById(R.id.view1);
         view3=findViewById(R.id.view3);
@@ -131,5 +132,26 @@ public class Datailpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.profile){
+            startActivity(new Intent(this,Profile.class));
+
+            return true;
+        }
+        if(id==R.id.sign_out){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+            return true;
+        }
+        if(id==android.R.id.home)
+        {
+            Intent intent=new Intent(Datailpage.this,Houselist.class);
+            startActivity(intent);
+        }
+        return true;
     }
 }
