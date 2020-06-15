@@ -108,7 +108,7 @@
         android:layout_marginEnd="100dp"
         android:background="@drawable/button_rounded"
         android:layout_marginBottom="5dp"
-        android:text="Deatails page temp"
+        android:text="Details page temp"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 </RelativeLayout>

@@ -8,8 +8,11 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Help extends AppCompatActivity {
 
@@ -49,5 +52,25 @@ public class Help extends AppCompatActivity {
             }
         }
         startActivity(callIntent);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.profile){
+            startActivity(new Intent(this,Profile.class));
+
+            return true;
+        }
+        if(id==R.id.sign_out){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+            return true;
+        }
+        if(id==android.R.id.home)
+            onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
+        return true;
+
     }
 }

@@ -189,8 +189,8 @@ public class Upload extends AppCompatActivity {
                                     mDatabaseReference.child(id).setValue(uploadDetails);
                                     mDatabaseReference=FirebaseDatabase.getInstance().getReference().child("Users").child(getuid).child("house");
                                     mDatabaseReference.child(id).setValue(uploadDetails);
-                                    Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                    Toast.makeText(Upload.this, "Upload Successful", Toast.LENGTH_LONG).show();
 
                                 }
                             });
@@ -224,12 +224,12 @@ public class Upload extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
-        if(id==R.id.item1){
+        if(id==R.id.profile){
             startActivity(new Intent(this,Profile.class));
 
             return true;
         }
-        if(id==R.id.item2){
+        if(id==R.id.sign_out){
             FirebaseAuth.getInstance().signOut();
             finish();
             startActivity(new Intent(this,LoginActivity.class));
@@ -237,6 +237,7 @@ public class Upload extends AppCompatActivity {
         }
         if(id==android.R.id.home)
         onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
         return true;
     }
 

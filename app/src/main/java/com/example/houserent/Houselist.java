@@ -37,7 +37,7 @@ public class Houselist extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_houselist);
         mRecyclerView=findViewById(R.id.recycler_view);
-        mProgressCircle=findViewById(R.id.progress_cirle);
+        mProgressCircle=findViewById(R.id.progress_circle);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mUploadDetails = new ArrayList<>();
@@ -83,12 +83,12 @@ public class Houselist extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
-        if(id==R.id.item1){
+        if(id==R.id.profile){
             startActivity(new Intent(this,Profile.class));
 
             return true;
         }
-        if(id==R.id.item2){
+        if(id==R.id.sign_out){
             FirebaseAuth.getInstance().signOut();
             finish();
             startActivity(new Intent(this,LoginActivity.class));
@@ -96,6 +96,7 @@ public class Houselist extends AppCompatActivity {
         }
         if(id==android.R.id.home)
             onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
         return true;
 
     }

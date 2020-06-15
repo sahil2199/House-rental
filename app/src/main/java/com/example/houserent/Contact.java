@@ -48,7 +48,7 @@ public class Contact extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
                 memail.setText(userprofile.getTxtEmail());
-                msubject.setText("Regarding to rent your house");
+                msubject.setText("About Renting your house");
                 mobile_no.setText(userprofile.getMobileNumber());
 
             }

@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AboutUs extends AppCompatActivity {
     TextView title,title1,des;
@@ -21,8 +24,23 @@ public class AboutUs extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id=item.getItemId();
+        if(id==R.id.profile){
+            startActivity(new Intent(this,Profile.class));
+
+            return true;
+        }
+        if(id==R.id.sign_out){
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+            return true;
+        }
+        if(id==android.R.id.home)
+            onBackPressed();
         startActivity(new Intent(this,MainActivity.class));
+        return true;
+
     }
 }

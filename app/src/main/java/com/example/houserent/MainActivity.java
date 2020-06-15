@@ -40,7 +40,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         btn_rent.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Houselist.class)));
         btn_sell.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(),Upload.class)));
+
     }
+
+
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         if(mtoggle.onOptionsItemSelected(item)){
@@ -60,13 +66,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         int id=item.getItemId();
-        if(id==R.id.item1){
+        if(id==R.id.profile){
             //profile
             startActivity(new Intent(this,Profile.class));
 
             return true;
         }
-        if(id==R.id.item2){
+        if(id==R.id.sign_out){
             //signout
             FirebaseAuth.getInstance().signOut();
             finish();
@@ -96,6 +102,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(new Intent(MainActivity.this,Profile.class));
             this.finish();
         }
+        if (menuItem.getItemId() == R.id.nav_my_uploads) {
+            System.out.println("MyUploads");
+           // startActivity(new Intent(MainActivity.this,MyUploads.class));
+            this.finish();
+        }
+
         if (menuItem.getItemId() == R.id.nav_sell) {
             startActivity(new Intent(MainActivity.this,Upload.class));
             this.finish();

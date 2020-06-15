@@ -54,7 +54,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
             intent.putExtra("detail",mUploadDetailes);
             intent.putExtra("pos",position);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            System.out.println("I am in video adaptor");
+            System.out.println("I am in house adaptor");
             mContext.startActivity(intent);
 
 

@@ -103,9 +103,9 @@ public class Datailpage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        price_house.setText(upDetail.getPrice());
+        price_house.setText("Rs "+upDetail.getPrice());
         bhk_house.setText(upDetail.getBedroom());
-        area_house.setText(upDetail.getArea());
+        area_house.setText(upDetail.getArea()+" Sqf");
         address_house.setText(upDetail.getAddress());
         city_house.setText(upDetail.getCity());
         floor_house.setText(upDetail.getFloorNo());
@@ -114,7 +114,7 @@ public class Datailpage extends AppCompatActivity {
         bathroom_house.setText(upDetail.getBathroom());
         furnish_house.setText(upDetail.getFurnishing());
         bachelor_house.setText(upDetail.getBachelorsAllow());
-        maintenance_house.setText(upDetail.getMaitenance());
+        maintenance_house.setText("Rs "+upDetail.getMaitenance());
         total_floor_house.setText(upDetail.getTotalFloor());
         car_park_house.setText(upDetail.getCarParking());
         facing_house.setText(upDetail.getFacing());
