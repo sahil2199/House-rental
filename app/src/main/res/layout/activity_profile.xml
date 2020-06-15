@@ -98,7 +98,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/temp"
+        android:id="@+id/myupload"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -108,7 +108,7 @@
         android:layout_marginEnd="100dp"
         android:background="@drawable/button_rounded"
         android:layout_marginBottom="5dp"
-        android:text="Details page temp"
+        android:text="My Uploads"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 </RelativeLayout>

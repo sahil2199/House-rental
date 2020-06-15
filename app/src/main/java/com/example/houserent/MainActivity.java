@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         if (menuItem.getItemId() == R.id.nav_my_uploads) {
             System.out.println("MyUploads");
-           // startActivity(new Intent(MainActivity.this,MyUploads.class));
+            startActivity(new Intent(MainActivity.this,MyUploads.class));
             this.finish();
         }
 

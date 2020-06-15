@@ -2,14 +2,21 @@ package com.example.houserent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class MyHouse extends AppCompatActivity {
     TextView price_fix,bhk_fix,area_fix,address_fix;
@@ -24,6 +31,10 @@ public class MyHouse extends AppCompatActivity {
     ScrollView scrollView;
     HorizontalScrollView horizontalScrollView;
     View view,view1,view3,view4,view5,view6,view9,view10,view11,view12,view13,view14,view15;
+    UploadDetails upDetail;
+    Button svbtn;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +78,7 @@ public class MyHouse extends AppCompatActivity {
         listed_house=findViewById(R.id.Listed_house);
         available_fix=findViewById(R.id.available_fix);
         available_house=findViewById(R.id.available_house);
-
+        svbtn=findViewById(R.id.save);
 
         scrollView=findViewById(R.id.scrollView_detail_page);
         horizontalScrollView=findViewById(R.id.horizontal_scrollView_imageView);
@@ -93,5 +104,52 @@ public class MyHouse extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        upDetail=new UploadDetails();
+        ArrayList<UploadDetails> list = (ArrayList<UploadDetails>) getIntent().getSerializableExtra("detail");
+        int pos=getIntent().getIntExtra("pos",0);
+        upDetail=list.get(pos);
+
+
+        price_house.setText("Rs "+upDetail.getPrice());
+        bhk_house.setText(upDetail.getBedroom());
+        area_house.setText(upDetail.getArea()+" Sqf");
+        address_house.setText(upDetail.getAddress());
+        city_house.setText(upDetail.getCity());
+        floor_house.setText(upDetail.getFloorNo());
+        balcony_house.setText(upDetail.getBalcony());
+        bedroom_house.setText(upDetail.getBedroom());
+        bathroom_house.setText(upDetail.getBathroom());
+        furnish_house.setText(upDetail.getFurnishing());
+        bachelor_house.setText(upDetail.getBachelorsAllow());
+        maintenance_house.setText("Rs "+upDetail.getMaitenance());
+        total_floor_house.setText(upDetail.getTotalFloor());
+        car_park_house.setText(upDetail.getCarParking());
+        facing_house.setText(upDetail.getFacing());
+        listed_house.setText(upDetail.getListed());
+        Glide.with(getApplicationContext()).load(upDetail.getmImageUrl()).into(img_detail_page1);
+        available_house.setText(upDetail.getAvailable());
+        System.out.println("User id 1"+upDetail.getId());
+        svbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseDatabase=FirebaseDatabase.getInstance();
+                databaseReference=firebaseDatabase.getReference().child("houses").child(upDetail.getId());//.setValue(upDetail);
+                System.out.println("USer id"+upDetail.getId());
+                System.out.println("why");
+                UploadDetails uploadDetails=new UploadDetails(upDetail.getTitle(),
+                        address_house.getText().toString().trim(), area_house.getText().toString().trim(),
+                        price_house.getText().toString().trim(),upDetail.getmImageUrl().toString(),floor_house.getText().toString().trim(),
+                        bedroom_house.getText().toString().trim(),bathroom_house.getText().toString().trim(),
+                        balcony_house.getText().toString().trim(),furnish_house.getText().toString().trim(),
+                        bachelor_house.getText().toString().trim(),maintenance_house.getText().toString().trim(),
+                        total_floor_house.getText().toString().trim(),car_park_house.getText().toString().trim(),
+                        facing_house.getText().toString().trim(), listed_house.getText().toString().trim(),
+                        city_house.getText().toString().trim(),upDetail.getId(),available_house.getText().toString().trim(),upDetail.getSellerID());
+                databaseReference.setValue(uploadDetails);
+                databaseReference=firebaseDatabase.getReference().child("Users").child(upDetail.getSellerID()).child("house").child(upDetail.getId());
+                databaseReference.setValue(uploadDetails);
+                startActivity(new Intent(MyHouse.this,MainActivity.class));
+            }
+        });
     }
 }

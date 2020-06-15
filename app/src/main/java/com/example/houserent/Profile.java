@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +22,7 @@ public class Profile extends AppCompatActivity {
 
     private TextView firstname,lastname,email,mobileno;
     private TextInputEditText address;
-    private Button edit,temp;
+    private Button edit,MyUpload;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
 
@@ -37,7 +36,7 @@ public class Profile extends AppCompatActivity {
         email=findViewById(R.id.email);
         mobileno=findViewById(R.id.mnum);
         edit=findViewById(R.id.editbtn);
-        temp=findViewById(R.id.temp);
+        MyUpload=findViewById(R.id.myupload);
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -50,12 +49,11 @@ public class Profile extends AppCompatActivity {
 
                 try {
                     Userprofile userprofile = dataSnapshot.getValue(Userprofile.class);
+                    System.out.println("First name"+ userprofile.getFirstName());
                     firstname.setText("FirstName:" + userprofile.getFirstName());
                     lastname.setText("LastName:" + userprofile.getLastName());
                     email.setText("Email:" + userprofile.getTxtEmail());
                     mobileno.setText("Mobile No:" + userprofile.getMobileNumber());
-
-
 
                 }
                 catch(NullPointerException nE){
@@ -80,32 +78,11 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        temp.setOnClickListener(new View.OnClickListener() {
+        MyUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startActivity(new Intent(Profile.this,MyUploads.class));
+                startActivity(new Intent(Profile.this,MyUploads.class));
             }
         });
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id=item.getItemId();
-        if(id==R.id.profile){
-            startActivity(new Intent(this,Profile.class));
-
-            return true;
-        }
-        if(id==R.id.sign_out){
-            FirebaseAuth.getInstance().signOut();
-            finish();
-            startActivity(new Intent(this,LoginActivity.class));
-            return true;
-        }
-        if(id==android.R.id.home)
-            onBackPressed();
-        startActivity(new Intent(this,MainActivity.class));
-        return true;
-
-    }
-
 }

@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MyHouse"></activity>
+        <activity android:name=".MyUploads"></activity>
         <activity
             android:name=".Help"
             android:parentActivityName=".MainActivity" />

@@ -184,7 +184,7 @@ public class Upload extends AppCompatActivity {
                                             mTextBachelorsAllow.getText().toString().trim(),mTextMaintenance.getText().toString().trim(),
                                             mTextTotalFloor.getText().toString().trim(),mTextCarParking.getText().toString().trim(),
                                             mTextFacing.getText().toString().trim(), mTextListed.getText().toString().trim(),
-                                            mTextCity.getText().toString().trim(),getuid,"Yes",sellerID);
+                                            mTextCity.getText().toString().trim(),id,"Yes",sellerID);
 
                                     mDatabaseReference.child(id).setValue(uploadDetails);
                                     mDatabaseReference=FirebaseDatabase.getInstance().getReference().child("Users").child(getuid).child("house");
