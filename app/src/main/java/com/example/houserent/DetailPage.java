@@ -86,6 +86,8 @@ public class DetailPage extends AppCompatActivity {
         assert list != null;
         upDetail=list.get(getIntent().getIntExtra("pos",0));
       //  System.out.println("Detail page 3");
+        int a;
+        a=getIntent().getIntExtra("pos",0);
         view=findViewById(R.id.view);
         view1=findViewById(R.id.view1);
         view3=findViewById(R.id.view3);
@@ -127,6 +129,7 @@ public class DetailPage extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(DetailPage.this,Contact.class);
                 intent.putExtra("sellerId",sellerID);
+                intent.putExtra("pos",a);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }

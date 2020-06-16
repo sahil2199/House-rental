@@ -33,6 +33,7 @@ public class Contact extends AppCompatActivity {
     String sellerID;
     DatabaseReference databaseReference;
 
+    int x;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,7 @@ public class Contact extends AppCompatActivity {
         msubject = findViewById(R.id.msubject);
         msg = findViewById(R.id.message_text);
 
+        x=getIntent().getIntExtra("pos",0);
         getSupportActionBar().setTitle("Contact");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -129,7 +131,12 @@ public class Contact extends AppCompatActivity {
             return true;
         }
         if (id == android.R.id.home) {
-            startActivity( new Intent(this, DetailPage.class));
+           // Intent intent=new Intent(Contact.this,DetailPage.class);
+            //intent.putExtra("pos",x);
+            //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //startActivity(intent);
+            onBackPressed();
+
             finish();
         }
         return true;
