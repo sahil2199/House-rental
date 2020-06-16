@@ -48,7 +48,7 @@ public class MyUploads extends AppCompatActivity {
         uploadDetails = new ArrayList<>();
         firebaseAuth=FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseAuth.getCurrentUser().getUid()).child("house");
-        getSupportActionBar().setTitle("House List");
+        getSupportActionBar().setTitle("My Uploads");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        // System.out.println("In myuploads");
 

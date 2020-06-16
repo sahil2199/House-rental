@@ -1,9 +1,7 @@
 package com.example.houserent;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -48,7 +45,7 @@ public class HouseAdapter extends RecyclerView.Adapter <HouseAdapter.HouseViewHo
         Picasso.get().load(uploadCurrent.getmImageUrl()).fit().centerCrop().into(holder.imageView);
 
         holder.cardView.setOnClickListener(v -> {//card view onclick listener
-            Intent intent=new Intent(mContext,Datailpage.class);
+            Intent intent=new Intent(mContext, DetailPage.class);
             //Bundle bundle=new Bundle();
             //bundle.putParcelableArrayList("detail",);
             intent.putExtra("detail",mUploadDetailes);

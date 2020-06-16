@@ -87,6 +87,7 @@ public class Upload extends AppCompatActivity {
 
 
 
+        getSupportActionBar().setTitle("Upload House");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mStorageReference= FirebaseStorage.getInstance().getReference("houses");

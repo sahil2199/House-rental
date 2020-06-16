@@ -18,7 +18,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,6 +41,9 @@ public class Contact extends AppCompatActivity {
         memail = findViewById(R.id.pemail);
         msubject = findViewById(R.id.msubject);
         msg = findViewById(R.id.message_text);
+
+        getSupportActionBar().setTitle("Contact");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         sellerID = getIntent().getStringExtra("sellerId");
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -80,7 +82,7 @@ public class Contact extends AppCompatActivity {
                     String s = "tel:" + phone;
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse(s));
-                    if (ActivityCompat.checkSelfPermission( Contact.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    if (ActivityCompat.checkSelfPermission(Contact.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
                         //    ActivityCompat#requestPermissions
                         // here to request the missing permissions, and then overriding
@@ -95,21 +97,43 @@ public class Contact extends AppCompatActivity {
             }
         });
     }
-    private void sendMail(){
+
+    private void sendMail() {
         String recipientList = memail.getText().toString();
-        String[] recipients =  recipientList.split(",");
+        String[] recipients = recipientList.split(",");
         String subject = msubject.getText().toString();
         String message = msg.getText().toString();
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL,recipients);
-        intent.putExtra(Intent.EXTRA_SUBJECT,subject);
-        intent.putExtra(Intent.EXTRA_TEXT,message);
+        intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
 
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent,"Choose an Email Client"));
+        startActivity(Intent.createChooser(intent, "Choose an Email Client"));
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.profile) {
+            startActivity(new Intent(this, Profile.class));
 
+            return true;
+        }
+        if (id == R.id.sign_out) {
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            startActivity(new Intent(this, LoginActivity.class));
+            return true;
+        }
+        if (id == android.R.id.home) {
+            startActivity( new Intent(this, DetailPage.class));
+            finish();
+        }
+        return true;
+
+
+    }
 }

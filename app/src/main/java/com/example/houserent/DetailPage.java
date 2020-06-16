@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +14,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Datailpage extends AppCompatActivity {
+public class DetailPage extends AppCompatActivity {
     TextView price_fix,price_house,bhk_fix,bhk_house,area_fix,area_house,address_fix,address_house;
     TextView city_fix,city_house,additional_details,floor_fix,floor_house,balcony_fix,balcony_house;
     TextView bedroom_fix,bedroom_house,bathroom_fix,bathroom_house,furnish_fix,furnish_house;
@@ -36,7 +34,7 @@ public class Datailpage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_datailpage);
+        setContentView(R.layout.activity_detail_page);
 
         btn_contact=findViewById(R.id.contact_button);
 
@@ -81,9 +79,10 @@ public class Datailpage extends AppCompatActivity {
         listed_fix=findViewById(R.id.Listed_fix);
         listed_house=findViewById(R.id.Listed_house);
         upDetail=new UploadDetails();
-        System.out.println("Detail page 1");
-        ArrayList<UploadDetails> list = (ArrayList<UploadDetails>) getIntent().getSerializableExtra("detail");
-     //   System.out.println("Detail page 2");
+       // System.out.println("Detail page 1");
+        ArrayList<UploadDetails> list;
+        list = (ArrayList<UploadDetails>) getIntent().getSerializableExtra("detail");
+        //   System.out.println("Detail page 2");
         assert list != null;
         upDetail=list.get(getIntent().getIntExtra("pos",0));
       //  System.out.println("Detail page 3");
@@ -126,7 +125,7 @@ public class Datailpage extends AppCompatActivity {
         btn_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Datailpage.this,Contact.class);
+                Intent intent = new Intent(DetailPage.this,Contact.class);
                 intent.putExtra("sellerId",sellerID);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -149,7 +148,7 @@ public class Datailpage extends AppCompatActivity {
         }
         if(id==android.R.id.home)
         {
-            Intent intent=new Intent(Datailpage.this,Houselist.class);
+            Intent intent=new Intent(this,Houselist.class);
             startActivity(intent);
         }
         return true;
